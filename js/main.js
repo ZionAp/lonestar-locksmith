@@ -1,4 +1,4 @@
-// LoneStar Gate Solutions - JavaScript Functionality
+// LoneStar Locksmith Solutions - JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('.header');
@@ -120,13 +120,31 @@ document.addEventListener('DOMContentLoaded', function () {
         formStatus.className = 'form-status' + (type ? ' ' + type : '');
     }
 
+    function showQuoteResult() {
+        const params = new URLSearchParams(window.location.search);
+        const result = params.get('quote');
+        if (!result) return;
+
+        if (result === 'sent') {
+            setFormStatus('Thank you! Your quote request has been sent. We will contact you within 24 hours.', 'success');
+        } else if (result === 'error') {
+            setFormStatus('We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.', 'error');
+        }
+
+        if (window.history && typeof window.history.replaceState === 'function') {
+            window.history.replaceState({}, '', window.location.pathname + window.location.hash);
+        }
+    }
+
     if (quoteForm) {
         quoteForm.addEventListener('input', function () {
             setFormStatus('', '');
         });
 
-        quoteForm.addEventListener('submit', function (e) {
+        quoteForm.addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            if (quoteForm.dataset.submitting === 'true') return;
 
             const formData = new FormData(quoteForm);
             const name = String(formData.get('name') || '').trim();
@@ -149,76 +167,76 @@ document.addEventListener('DOMContentLoaded', function () {
             const submitBtn = quoteForm.querySelector('button[type="submit"]');
             if (!submitBtn || submitBtn.disabled) return;
 
+            if (typeof window.fetch !== 'function') {
+                quoteForm.submit();
+                return;
+            }
+
             const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Request Sent!';
+            const controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
+            const timeoutId = window.setTimeout(function () {
+                if (controller) controller.abort();
+            }, 15000);
+
+            let succeeded = false;
+            quoteForm.dataset.submitting = 'true';
+            setFormStatus('Sending your request...', '');
+            submitBtn.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#icon-paper-plane"></use></svg> Sending...';
             submitBtn.disabled = true;
-            submitBtn.classList.add('is-success');
-            setFormStatus('', '');
+            submitBtn.setAttribute('aria-busy', 'true');
 
-            setTimeout(function () {
-                setFormStatus(
-                    'Thank you ' + name + '! Your quote request has been received. ' +
-                    'We will call you at ' + phone + ' within 24 hours to discuss your ' + service + ' project.',
-                    'success'
-                );
+            try {
+                const options = {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                };
+                if (controller) options.signal = controller.signal;
+
+                const response = await fetch(quoteForm.action, options);
+                let payload = {};
+                try {
+                    payload = await response.json();
+                } catch (error) {
+                    payload = {};
+                }
+
+                if (!response.ok || !payload.ok) {
+                    throw new Error(payload.message || 'We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.');
+                }
+
+                succeeded = true;
                 quoteForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('is-success');
-            }, 800);
-        });
-    }
+                setFormStatus(payload.message || 'Thank you! Your quote request has been sent. We will contact you within 24 hours.', 'success');
+                submitBtn.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#icon-check"></use></svg> Request Sent!';
+                submitBtn.classList.add('is-success');
 
-    // Cycling slideshows (hero background + about photo)
-    function initSlideshow(slides, interval) {
-        if (!slides || slides.length < 2 || prefersReducedMotion) return;
+                window.setTimeout(function () {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.removeAttribute('aria-busy');
+                    submitBtn.classList.remove('is-success');
+                }, 800);
+            } catch (error) {
+                const message = error && error.name === 'AbortError'
+                    ? 'The request timed out. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.'
+                    : 'We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.';
+                setFormStatus(message, 'error');
+            } finally {
+                window.clearTimeout(timeoutId);
+                delete quoteForm.dataset.submitting;
 
-        let index = 0;
-        let timer = null;
-
-        // Hero slides defer their background image to a CSS class so the
-        // browser only downloads images as they are needed. Load the next
-        // slide's background one step early to avoid a visible gap.
-        function loadSlide(at) {
-            const slide = slides[(at + slides.length) % slides.length];
-            const id = slide && slide.dataset ? slide.dataset.slide : '';
-            if (id) slide.classList.add('hero-slide--' + id);
-        }
-
-        loadSlide(0);
-        loadSlide(1);
-
-        function showNext() {
-            slides[index].classList.remove('is-active');
-            index = (index + 1) % slides.length;
-            loadSlide(index);
-            loadSlide(index + 1);
-            slides[index].classList.add('is-active');
-        }
-
-        function start() {
-            if (timer) return;
-            timer = setInterval(showNext, interval);
-        }
-
-        function stop() {
-            clearInterval(timer);
-            timer = null;
-        }
-
-        start();
-
-        document.addEventListener('visibilitychange', function () {
-            if (document.hidden) {
-                stop();
-            } else {
-                start();
+                if (!succeeded) {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.removeAttribute('aria-busy');
+                    submitBtn.classList.remove('is-success');
+                }
             }
         });
-    }
 
-    initSlideshow(document.querySelectorAll('.hero-slide'), 5000);
-    initSlideshow(document.querySelectorAll('.about-slide'), 4500);
+        showQuoteResult();
+    }
 
     // Generic horizontal carousel with arrows and optional dots
     function initCarousel(options) {
@@ -284,7 +302,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateArrows();
     }
 
-    initCarousel({ track: 'galleryTrack', prev: 'galleryPrev', next: 'galleryNext', item: '.gallery-item' });
     initCarousel({ track: 'testimonialsTrack', prev: 'testimonialsPrev', next: 'testimonialsNext', item: '.testimonial-card', dots: 'testimonialsDots' });
 
     // Scroll reveal animation
@@ -313,6 +330,52 @@ document.addEventListener('DOMContentLoaded', function () {
     const areasGrid = document.getElementById('areasGrid');
     const areaTitle = document.getElementById('areaTitle');
     const areaBlurb = document.getElementById('areaBlurb');
+    const areaGuideLink = document.getElementById('areaGuideLink');
+    const areaGuideLabel = document.getElementById('areaGuideLabel');
+
+    const marker = document.querySelector('.texas-marker');
+    const markerPulse = document.querySelector('.texas-marker-pulse');
+    const cityMarkers = {
+        'Austin': [120, 120],
+        'Round Rock': [122, 106],
+        'Cedar Park': [112, 102],
+        'Pflugerville': [128, 108],
+        'Georgetown': [118, 92],
+        'Leander': [108, 98],
+        'Lakeway': [105, 118],
+        'Bee Cave': [102, 124],
+        'Westlake Hills': [112, 120],
+        'Dripping Springs': [95, 136],
+        'Spicewood': [88, 124],
+        'Buda': [125, 136],
+        'Kyle': [128, 146],
+        'Hutto': [132, 100],
+        'Manor': [140, 118],
+        'Lago Vista': [95, 108],
+        'Wimberley': [105, 152],
+        'Driftwood': [100, 140],
+        'Del Valle': [135, 126],
+        'Jollyville': [115, 108],
+        'Liberty Hill': [100, 94],
+        'San Marcos': [120, 172]
+    };
+
+    function moveAreaMarker(city) {
+        const position = cityMarkers[city] || cityMarkers.Austin;
+        if (!position) return;
+        const x = position[0];
+        const y = position[1];
+        if (marker) {
+            marker.setAttribute('cx', String(x));
+            marker.setAttribute('cy', String(y));
+        }
+        if (markerPulse) {
+            markerPulse.setAttribute('cx', String(x));
+            markerPulse.setAttribute('cy', String(y));
+        }
+        const svg = marker ? marker.ownerSVGElement : null;
+        if (svg) svg.setAttribute('aria-label', 'Map of Texas highlighting ' + city);
+    }
 
     if (areasGrid && areaTitle && areaBlurb) {
         const areaItems = Array.from(areasGrid.querySelectorAll('.area-item'));
@@ -330,6 +393,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 const city = item.getAttribute('data-city') || item.textContent.trim();
                 const blurb = item.getAttribute('data-blurb') || '';
 
+                moveAreaMarker(city);
+
+                if (areaGuideLink) {
+                    const slug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+                    areaGuideLink.href = 'areas/' + slug + '.html';
+                    areaGuideLink.setAttribute('aria-label', 'Read the ' + city + ' locksmith guide');
+                    if (areaGuideLabel) areaGuideLabel.textContent = 'Read the ' + city + ' locksmith guide';
+                }
+                const areasBrowseAllLink = document.getElementById('areasBrowseAllLink');
+                if (areasBrowseAllLink) {
+                    const slug = city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+                    areasBrowseAllLink.href = 'areas/' + slug + '.html';
+                    areasBrowseAllLink.textContent = city + ' locksmith service guide';
+                }
+
                 areaBlurb.classList.add('is-changing');
                 if (prefersReducedMotion) {
                     areaTitle.textContent = city + ' Coverage';
@@ -345,6 +423,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 250);
             });
         });
+
+        moveAreaMarker('Austin');
     }
 
     // Update copyright year

@@ -35,6 +35,20 @@ async function main() {
       window.IntersectionObserver = class { observe() {} unobserve() {} disconnect() {} };
       window.scrollTo = () => {};
       window.alert = () => { throw new Error('alert() should not be used'); };
+      window.__quoteRequests = [];
+      window.fetch = async (url, options = {}) => {
+        window.__quoteRequests.push({ url: String(url), options });
+        const body = options.body;
+        const name = body && typeof body.get === 'function' ? String(body.get('name') || '') : '';
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            ok: true,
+            message: 'Thank you ' + name + '! Your quote request has been sent. We will contact you within 24 hours.'
+          })
+        };
+      };
       window.addEventListener('error', e => errors.push('window error: ' + e.message));
     }
   });
@@ -63,49 +77,35 @@ async function main() {
   });
 
   check('essential SEO meta tags are present', () => {
+    assert.strictEqual(d.querySelectorAll('link[rel="canonical"]').length, 1, 'expected exactly one canonical');
     assert.ok(d.querySelector('link[rel="canonical"][href^="https://"]'), 'missing canonical');
     assert.match(d.querySelector('meta[name="robots"]')?.content || '', /index/, 'missing robots index');
-    assert.strictEqual(d.querySelector('meta[property="og:image"]')?.content?.includes('/images/og-image.jpg'), true, 'missing og:image');
+    assert.strictEqual(d.querySelector('meta[property="og:image"]')?.content?.includes('/images/og-image.png'), true, 'missing og:image');
     assert.strictEqual(d.querySelector('meta[name="twitter:card"]')?.content, 'summary_large_image', 'twitter card not large');
     assert.ok(d.querySelector('link[rel="icon"]'), 'missing favicon');
   });
 
-  check('hero LCP image is preloaded', () => {
-    const preload = d.querySelector('link[rel="preload"][as="image"]');
-    assert.ok(preload, 'missing image preload');
-    assert.strictEqual(preload.getAttribute('fetchpriority'), 'high');
-  });
-
-  check('images use WebP with JPEG fallback via <picture>', () => {
-    const pics = d.querySelectorAll('picture');
-    assert.ok(pics.length >= 13, 'expected gallery/about pictures, got ' + pics.length);
-    pics.forEach(pic => {
-      const source = pic.querySelector('source[type="image/webp"]');
-      const img = pic.querySelector('img');
-      assert.ok(source, 'picture missing webp source');
-      assert.match(source.getAttribute('srcset'), /\.webp$/, 'source not webp');
-      assert.ok(img && /\.jpg$/.test(img.getAttribute('src')), 'picture missing jpg fallback img');
+  check('site uses only the locksmith photo set (no gate photos)', () => {
+    const html = fs.readFileSync(indexPath, 'utf8');
+    assert.doesNotMatch(html, /IMG-20261021|images\/gallery/, 'gate photo reference remains');
+    assert.ok(d.querySelectorAll('img').length >= 12, 'expected locksmith photos, got ' + d.querySelectorAll('img').length);
+    assert.ok(!fs.existsSync(path.join(siteRoot, 'images', 'gallery')), 'gate photo directory remains');
+    assert.ok(!fs.existsSync(path.join(siteRoot, 'images', 'og-image.jpg')), 'gate og-image remains');
+    assert.ok(fs.existsSync(path.join(siteRoot, 'images', 'og-image.png')), 'missing branded og-image');
+    const imgs = Array.from(d.querySelectorAll('img'));
+    imgs.forEach(img => {
+      assert.match(img.getAttribute('src'), /\.(webp|png|jpg)$/, 'bad image src');
+      assert.ok(img.hasAttribute('width') && img.hasAttribute('height'), 'image missing dimensions');
+      assert.ok(img.getAttribute('loading') === 'lazy' || img.getAttribute('fetchpriority') === 'high', 'image not lazy/high priority');
     });
-    [
-      'IMG-20261021-WA0026-thumb.webp', 'IMG-20261021-WA0028-thumb.webp',
-      'IMG-20261021-WA0035-thumb.webp', 'IMG-20261021-WA0047-thumb.webp',
-      'IMG-20261021-WA0052-thumb.webp', 'IMG-20261021-WA0056-thumb.webp',
-      'IMG-20261021-WA0057-thumb.webp', 'IMG-20261021-WA0059-thumb.webp',
-      'IMG-20261021-WA0060-thumb.webp'
-    ].forEach(f => assert.ok(fs.existsSync(path.join(siteRoot, 'images', 'gallery', f)), 'missing ' + f));
   });
 
-  check('hero backgrounds are deferred until needed', () => {
-    const slides = d.querySelectorAll('.hero-slide');
-    assert.ok(slides.length >= 3, 'expected hero slides');
-    assert.ok(slides[0].classList.contains('hero-slide--1'), 'first hero slide should render immediately');
-    for (let i = 0; i < slides.length; i++) {
-      assert.strictEqual(slides[i].dataset.slide, String(i + 1), 'hero slide missing data-slide');
-    }
-    // Slide 2 is preloaded one step ahead; the rest must not load up front.
-    for (let i = 2; i < slides.length; i++) {
-      assert.ok(!/hero-slide--\d/.test(slides[i].className), 'hero slide ' + (i + 1) + ' loads eagerly');
-    }
+  check('hero is photo-free and styled with a CSS gradient', () => {
+    assert.strictEqual(d.querySelectorAll('.hero-slide, .hero-slideshow').length, 0, 'hero photo slides remain');
+    assert.strictEqual(d.querySelectorAll('link[rel="preload"][as="image"]').length, 0, 'hero image preload remains');
+    const css = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
+    assert.ok(/\.hero-bg\s*{[^}]*linear-gradient/.test(css), 'hero background lacks gradient styling');
+    assert.ok(!/images\/gallery/.test(css), 'css still references gate photos');
   });
 
   check('fonts are self-hosted (no Google Fonts CDN)', () => {
@@ -120,7 +120,7 @@ async function main() {
     ['inter-latin.woff2', 'inter-latin-ext.woff2', 'plus-jakarta-sans-latin.woff2', 'plus-jakarta-sans-latin-ext.woff2'].forEach(f => {
       assert.ok(fs.existsSync(path.join(siteRoot, 'fonts', f)), 'missing font file ' + f);
     });
-    assert.strictEqual(d.querySelectorAll('#main [style], .hero-slide[style]').length, 0, 'inline style attribute blocks CSP');
+    assert.strictEqual(d.querySelectorAll('#main [style]').length, 0, 'inline style attribute blocks CSP');
   });
 
   check('icons are inlined with no external icon CDN', () => {
@@ -130,10 +130,7 @@ async function main() {
     assert.strictEqual(d.querySelectorAll('link[href*="font-awesome"]').length, 0, 'Font Awesome CDN still linked');
   });
 
-  check('veteran-owned messaging is present', () => {
-    const text = d.body.textContent;
-    assert.match(text, /Veteran[\s-]?Owned/i, 'missing veteran-owned text');
-  });
+  // veteran-owned messaging removed
 
   check('nav toggle syncs aria-expanded', () => {
     const btn = d.getElementById('navToggle');
@@ -169,24 +166,53 @@ async function main() {
 
 
 
+  check('quote form is wired to the hardened PHP endpoint', () => {
+    const form = d.getElementById('quoteForm');
+    assert.strictEqual(form.getAttribute('action'), 'send-quote.php');
+    assert.strictEqual(form.getAttribute('method'), 'post');
+    assert.ok(form.querySelector('input[name="company"]'), 'missing honeypot field');
+    assert.strictEqual(form.querySelector('input[name="company"]').getAttribute('tabindex'), '-1');
+    assert.ok(fs.existsSync(path.join(siteRoot, 'send-quote.php')), 'missing send-quote.php');
+
+    const endpoint = fs.readFileSync(path.join(siteRoot, 'send-quote.php'), 'utf8');
+    assert.match(endpoint, /^\s*<\?php/);
+    assert.match(endpoint, /MAIL_TO = 'info\@lonestarlocksmithsolutions\.com'/);
+    assert.match(endpoint, /FILTER_VALIDATE_EMAIL/);
+    assert.match(endpoint, /function allows_quote/);
+    assert.match(endpoint, /@mail\(/);
+    assert.doesNotMatch(endpoint, /phpinfo|var_dump/);
+  });
+
   check('form rejects missing required fields with inline status', () => {
     const form = d.getElementById('quoteForm');
     form.dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
     const status = d.getElementById('formStatus');
     assert.ok(status.classList.contains('error'), 'status not error: ' + status.className);
     assert.ok(/required fields/i.test(status.textContent));
+    assert.strictEqual(window.__quoteRequests.length, 0, 'invalid form should not send');
   });
 
   const form = d.getElementById('quoteForm');
   form.querySelector('#name').value = 'Test User';
   form.querySelector('#phone').value = '5125550100';
-  form.querySelector('#service').value = 'installation';
+  form.querySelector('#service').value = 'emergency-lockout';
   form.dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
   const btn = form.querySelector('button[type="submit"]');
 
   check('form button enters pending state', () => {
-    assert.ok(/Request Sent/.test(btn.textContent), 'button not updated: ' + btn.textContent);
+    assert.ok(/Sending|Request Sent/.test(btn.textContent), 'button not updated: ' + btn.textContent);
     assert.ok(btn.disabled);
+  });
+
+  check('form sends an AJAX request to the quote endpoint', () => {
+    assert.strictEqual(window.__quoteRequests.length, 1, 'expected one quote request');
+    const sent = window.__quoteRequests[0];
+    assert.match(sent.url, /send-quote\.php$/);
+    assert.strictEqual(sent.options.method, 'POST');
+    assert.strictEqual(sent.options.headers.Accept, 'application/json');
+    assert.strictEqual(sent.options.body.get('name'), 'Test User');
+    assert.strictEqual(sent.options.body.get('phone'), '5125550100');
+    assert.strictEqual(sent.options.body.get('service'), 'emergency-lockout');
   });
 
   await sleep(900);
@@ -204,9 +230,22 @@ async function main() {
   });
 
   check('SEO crawl files and icons exist on disk', () => {
-    ['robots.txt', 'sitemap.xml', 'favicon.ico', path.join('images', 'og-image.jpg'), path.join('images', 'favicon.png')].forEach(f => {
+    ['robots.txt', 'sitemap.xml', 'favicon.ico', path.join('images', 'og-image.png'), path.join('images', 'favicon.png')].forEach(f => {
       assert.ok(fs.existsSync(path.join(siteRoot, f)), 'missing file ' + f);
     });
+  });
+
+  check('stats band and customer reviews replace the photo gallery', () => {
+    assert.ok(d.querySelector('.stats-band'), 'missing stats band');
+    assert.strictEqual(d.querySelectorAll('.stat-item').length, 4, 'expected 4 stats');
+    assert.strictEqual(d.querySelectorAll('.review-card').length, 3, 'expected 3 review cards');
+    d.querySelectorAll('.review-card').forEach(card => {
+      assert.strictEqual(card.querySelectorAll('.review-stars .icon').length, 5, 'review missing 5 stars');
+      assert.ok(card.querySelector('.review-name').textContent.trim(), 'review missing name');
+      assert.ok(card.querySelector('.review-meta').textContent.trim(), 'review missing meta');
+    });
+    assert.strictEqual(d.querySelectorAll('#gallery, .gallery-track, .about-slideshow').length, 0, 'gallery markup remains');
+    assert.strictEqual(d.querySelectorAll('.area-item[data-city]').length, 22, 'expected 22 service area buttons');
   });
 
   check('structured data includes LocalBusiness and FAQPage', () => {
@@ -218,6 +257,7 @@ async function main() {
     assert.ok(types.includes('FAQPage'), 'missing FAQPage');
     const biz = blocks.find(b => b['@type'] === 'LocalBusiness');
     assert.ok(biz.image, 'LocalBusiness missing image');
+    assert.strictEqual(biz.email, 'info@lonestarlocksmithsolutions.com', 'LocalBusiness email is outdated');
     assert.ok(biz.openingHoursSpecification, 'LocalBusiness missing hours');
     assert.ok(Array.isArray(biz.sameAs) && biz.sameAs.length, 'LocalBusiness missing sameAs');
   });

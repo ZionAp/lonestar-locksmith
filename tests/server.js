@@ -22,8 +22,8 @@ const types = {
   '.woff2': 'font/woff2'
 };
 
-const publicFiles = new Set(['index.html', 'favicon.ico', 'robots.txt', 'sitemap.xml']);
-const publicDirs = new Set(['css', 'js', 'images', 'fonts']);
+const publicFiles = new Set(['index.html', 'favicon.ico', 'robots.txt', 'sitemap.xml', 'contact.html', 'service-areas.html']);
+const publicDirs = new Set(['css', 'js', 'images', 'fonts', 'areas', 'services', 'blog']);
 
 const securityHeaders = {
   'X-Content-Type-Options': 'nosniff',

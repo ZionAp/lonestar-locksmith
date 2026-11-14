@@ -43,7 +43,7 @@ try {
     const res = await request(port, '/');
     assert.equal(res.status, 200);
     assert.match(res.headers['content-type'], /^text\/html/);
-    assert.match(res.body, /LoneStar Gate Solutions/);
+    assert.match(res.body, /LoneStar Locksmith Solutions/);
   });
 
   await check('serves css and js with correct content types', async () => {
@@ -80,9 +80,9 @@ try {
     assert.match(sitemap.headers['content-type'], /xml/);
     assert.match(sitemap.body, /<urlset/);
 
-    const og = await request(port, '/images/og-image.jpg');
+    const og = await request(port, '/images/og-image.png');
     assert.equal(og.status, 200);
-    assert.match(og.headers['content-type'], /^image\/jpeg/);
+    assert.match(og.headers['content-type'], /^image\/png/);
 
     const icon = await request(port, '/favicon.ico');
     assert.equal(icon.status, 200);
@@ -111,7 +111,7 @@ try {
     const woff = await request(port, '/fonts/inter-latin.woff2');
     assert.match(woff.headers['cache-control'], /immutable/);
 
-    const img = await request(port, '/images/gallery/IMG-20261021-WA0047-thumb.webp');
+    const img = await request(port, '/images/og-image.png');
     assert.match(img.headers['cache-control'], /immutable/);
 
     const css = await request(port, '/css/style.css');
@@ -170,8 +170,16 @@ try {
     assert.equal(res.body, '');
   });
 
+  await check('gate project photos are removed', async () => {
+    const jpg = await request(port, '/images/og-image.jpg');
+    assert.equal(jpg.status, 404, 'old gate og-image still served');
+
+    const photo = await request(port, '/images/gallery/IMG-20261021-WA0026.jpg');
+    assert.equal(photo.status, 404, 'gate gallery photo still served');
+  });
+
   await check('does not list directories', async () => {
-    const res = await request(port, '/images/gallery/');
+    const res = await request(port, '/images/');
     assert.equal(res.status, 404);
   });
 } finally {
