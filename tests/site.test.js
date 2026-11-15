@@ -100,12 +100,33 @@ async function main() {
     });
   });
 
-  check('hero is photo-free and styled with a CSS gradient', () => {
+  check('hero uses a decorative high-priority image with a CSS gradient overlay', () => {
     assert.strictEqual(d.querySelectorAll('.hero-slide, .hero-slideshow').length, 0, 'hero photo slides remain');
-    assert.strictEqual(d.querySelectorAll('link[rel="preload"][as="image"]').length, 0, 'hero image preload remains');
+    const preload = d.querySelectorAll('link[rel="preload"][as="image"]');
+    assert.strictEqual(preload.length, 1, 'expected exactly one hero image preload');
+    assert.match(preload[0].getAttribute('href'), /images\/residential-locksmith-\.webp$/, 'hero image preload points elsewhere');
+    assert.strictEqual(preload[0].getAttribute('fetchpriority'), 'high', 'hero image preload not high priority');
+    const heroImg = d.querySelector('.hero-bg img');
+    assert.ok(heroImg, 'missing hero image');
+    assert.strictEqual(heroImg.getAttribute('fetchpriority'), 'high', 'hero image not high priority');
+    assert.strictEqual(heroImg.getAttribute('alt'), '', 'hero image should be decorative (empty alt)');
     const css = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
-    assert.ok(/\.hero-bg\s*{[^}]*linear-gradient/.test(css), 'hero background lacks gradient styling');
+    assert.ok(/\.hero-bg::after\s*{[^}]*linear-gradient/.test(css), 'hero background lacks gradient overlay');
     assert.ok(!/images\/gallery/.test(css), 'css still references gate photos');
+  });
+
+  check('testimonials carousel does not break LCP reporting', () => {
+    const rawCss = fs.readFileSync(path.join(siteRoot, 'css', 'style.css'), 'utf8');
+    const css = rawCss.replace(/\/\*[\s\S]*?\*\//g, ''); // ignore comments
+    const rule = css.match(/\.testimonials-track\s*{[^}]*}/);
+    assert.ok(rule, 'missing .testimonials-track rule');
+    const body = rule[0];
+    assert.match(body, /overflow-x:\s*auto/, 'testimonials track should still scroll horizontally');
+    assert.match(body, /scroll-snap-type:\s*x\s+mandatory/, 'testimonials track should keep scroll snapping');
+    // Regression guard: scroll-behavior: smooth + scroll-snap-type: mandatory makes
+    // Chrome perform an animated snap-scroll at load, which stops it reporting LCP
+    // for the whole page (PageSpeed Insights shows "Error! NO_LCP").
+    assert.doesNotMatch(body, /scroll-behavior:\s*smooth/, 'scroll-behavior: smooth on the snap track suppresses LCP');
   });
 
   check('fonts are self-hosted (no Google Fonts CDN)', () => {

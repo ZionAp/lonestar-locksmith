@@ -470,16 +470,29 @@ a {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background:
-        linear-gradient(100deg, rgba(12, 18, 25, 0.92) 0%, rgba(12, 18, 25, 0.78) 45%, rgba(12, 18, 25, 0.55) 100%),
-        url('../images/residential-locksmith-.webp') center / cover no-repeat;
+    overflow: hidden;
+}
+
+/* Decorative hero photo. A real <img> is used (instead of a CSS background)
+   so the browser always has a concrete Largest Contentful Paint candidate and
+   can fetch it at high priority. */
+.hero-bg img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 15% 30%, rgba(31, 78, 121, 0.35), transparent 70%);
+    z-index: 1;
+    background:
+        radial-gradient(ellipse 60% 50% at 15% 30%, rgba(31, 78, 121, 0.35), transparent 70%),
+        linear-gradient(100deg, rgba(12, 18, 25, 0.92) 0%, rgba(12, 18, 25, 0.78) 45%, rgba(12, 18, 25, 0.55) 100%);
 }
 
 .hero-eyebrow {
@@ -1486,7 +1499,13 @@ a {
     gap: 2rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    /* No CSS `scroll-behavior: smooth` here on purpose. Combined with
+       `scroll-snap-type: mandatory`, it makes the browser perform an animated
+       snap-scroll of the track during load. Chrome treats that programmatic
+       scroll as a user scroll and stops reporting Largest Contentful Paint for
+       the whole page, which zeroes out the site's LCP. Snap still works (it is
+       applied instantly during layout), and the carousel's own JS still scrolls
+       smoothly because it passes `behavior: 'smooth'` explicitly. */
     padding: 0.25rem 0.25rem 1.5rem;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;

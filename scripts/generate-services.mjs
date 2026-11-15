@@ -171,7 +171,9 @@ for (const p of pages){
 
   const main = `<main id="main">
     <section class="hero hero--inner">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+            <img src="../images/residential-locksmith-.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">

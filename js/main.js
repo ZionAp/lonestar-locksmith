@@ -321,8 +321,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         revealTargets.forEach(el => {
-            el.classList.add('reveal');
-            observer.observe(el);
+            // Only animate elements that start below the fold. Hiding an
+            // element that is already in the viewport (opacity: 0) can suppress
+            // or invalidate the Largest Contentful Paint candidate.
+            if (el.getBoundingClientRect().top > window.innerHeight) {
+                el.classList.add('reveal');
+                observer.observe(el);
+            }
         });
     }
 

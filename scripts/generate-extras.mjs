@@ -95,7 +95,9 @@ function renderPage(p, depth){
     main = `
 <main id="main">
     <section class="hero hero--inner">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+            <img src="${cssPrefix}images/residential-locksmith-.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -126,7 +128,9 @@ ${p.body}
     main = `
 <main id="main">
     <section class="hero hero--inner">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+            <img src="${cssPrefix}images/residential-locksmith-.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -213,7 +217,9 @@ ${p.body}
     main = `
 <main id="main">
     <section class="hero hero--inner">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" aria-hidden="true">
+            <img src="${cssPrefix}images/residential-locksmith-.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
