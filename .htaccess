@@ -54,3 +54,49 @@ AddType image/webp .webp
     Allow from all
   </FilesMatch>
 </IfModule>
+
+# --- Hardening: never serve project internals in production -----------------
+# The Git deployment copies the whole repository into the web root, so dev
+# tooling (tests, scripts, package manifests, .git) must be denied explicitly.
+
+# Dotfiles: .git, .gitignore, .npmrc, .nvmrc, .htmlvalidate.json, .env, ...
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Project metadata files
+<FilesMatch "^(package\.json|package-lock\.json|README\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Build/test tooling by extension
+<FilesMatch "\.(mjs|py)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# tests/ and scripts/ directories in full
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^(tests|scripts)/ - [F,L]
+</IfModule>
+<IfModule mod_alias.c>
+  RedirectMatch 403 ^/(tests|scripts)(/|$)
+</IfModule>
