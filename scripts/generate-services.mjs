@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const siteUrl = 'https://www.austinlocksmithpros.com';
 const phone = '(737) 265-4627';
 const phoneHref = 'tel:+17372654627';
-const email = 'info@austinlocksmithpros.com';
+const email = 'austinlocksmithpros@gmail.com';
 
 const pages = [
   {

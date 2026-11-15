@@ -2,7 +2,7 @@
 declare(strict_types=1);
 ini_set('display_errors', '0');
 
-const MAIL_TO = 'info@austinlocksmithpros.com';
+const MAIL_TO = 'austinlocksmithpros@gmail.com';
 const MAIL_FROM = 'no-reply@austinlocksmithpros.com';
 const SITE_NAME = 'Austin Locksmith Pros';
 const MAX_BODY_BYTES = 20000;
@@ -212,7 +212,7 @@ $sent = @mail(MAIL_TO, $subject, $body, implode("\r\n", $headers), '-f' . MAIL_F
 
 if (!$sent) {
     error_log('Austin Locksmith Pros quote form mail() failed for ' . $phoneDigits);
-    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (737) 265-4627 or email info@austinlocksmithpros.com.']);
+    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (737) 265-4627 or email austinlocksmithpros@gmail.com.']);
 }
 
 finish(200, ['ok' => true, 'message' => 'Thank you ' . $name . '! Your quote request has been sent. We will contact you at ' . $phone . ' within 24 hours.']);
