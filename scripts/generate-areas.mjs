@@ -19,7 +19,7 @@ const areas = [
     ],
     issues: `Austin lock calls range from a key snapped off in a front-door deadbolt to a smart lock that died after a power blink. Common causes include worn pins, misaligned strike plates, swollen doors after humid weeks, and batteries or motors that quietly fail. We diagnose the actual problem first, then explain repair and replacement options.`,
     faqs: [
-      ['How fast can a locksmith get to me in Austin?', `For most Austin addresses our average arrival time is 10 to 45 minutes, 24 hours a day. Traffic and distance affect the ETA, so call (512) 555-0192 for an honest time estimate for your location.`],
+      ['How fast can a locksmith get to me in Austin?', `For most Austin addresses our average arrival time is 10 to 45 minutes, 24 hours a day. Traffic and distance affect the ETA, so call (737) 265-4627 for an honest time estimate for your location.`],
       ['Can you rekey my home the same day in Austin?', `Yes. Whole-house rekeys are typically completed in a single visit, and our vans carry the common residential cylinders and key blanks to finish on the spot.`]
     ],
     areaLine: `We also serve nearby Westlake Hills, Bee Cave, Manor, and communities throughout the Austin metro.`
@@ -373,8 +373,8 @@ const escapeHtml = (value) => String(value)
 const icon = (name, className = 'icon') =>
   `<svg class="${className}" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
 
-const phoneHtml = '(512)&nbsp;555&#8209;0192';
-const phoneHref = 'tel:+15125550192';
+const phoneHtml = '(737)&nbsp;265&#8209;4627';
+const phoneHref = 'tel:+17372654627';
 const email = 'info@austinlocksmithpros.com';
 
 const indexHtml = await fs.readFile(path.join(root, 'index.html'), 'utf8');
@@ -670,7 +670,7 @@ function serviceSchema(area, canonical) {
       '@type': 'LocalBusiness',
       name: 'Austin Locksmith Pros',
       url: siteUrl,
-      telephone: '+15125550192',
+      telephone: '+17372654627',
       email,
       image: `${siteUrl}/images/og-image.png`,
       address: {
@@ -718,7 +718,7 @@ function breadcrumbSchema(area, canonical) {
 function faqSchema(area) {
   const questions = [
     ...area.faqs,
-    [`Do you offer 24/7 emergency lockout service in ${area.city}?`, `Yes. We are open around the clock, every day of the year, with typical response times of 10 to 45 minutes in the Austin metro. Call (512) 555-0192 for service in ${area.city}.`]
+    [`Do you offer 24/7 emergency lockout service in ${area.city}?`, `Yes. We are open around the clock, every day of the year, with typical response times of 10 to 45 minutes in the Austin metro. Call (737) 265-4627 for service in ${area.city}.`]
   ];
   return {
     '@context': 'https://schema.org',
@@ -737,7 +737,7 @@ function faqSchema(area) {
 function renderCity(area) {
   const canonical = `${siteUrl}/areas/${area.slug}.html`;
   const title = `Locksmith in ${area.city}, TX | Austin Locksmith Pros`;
-  const description = `24/7 emergency locksmith in ${area.city}, TX - lockouts, rekeying, car keys, smart locks, commercial security. 10-45 min response. Call (512) 555-0192.`;
+  const description = `24/7 emergency locksmith in ${area.city}, TX - lockouts, rekeying, car keys, smart locks, commercial security. 10-45 min response. Call (737) 265-4627.`;
 
   const article = `<article class="prose">
                     <h2>Local locksmith service built for ${area.city}</h2>
@@ -827,7 +827,7 @@ function renderCity(area) {
 function renderHub() {
   const canonical = `${siteUrl}/areas/`;
   const title = 'Locksmith Service Areas | Austin Locksmith Pros';
-  const description = '24/7 locksmith service across Austin and Central Texas - lockouts, rekeying, car keys, smart locks & commercial security. Find your city and call (512) 555-0192.';
+  const description = '24/7 locksmith service across Austin and Central Texas - lockouts, rekeying, car keys, smart locks & commercial security. Find your city and call (737) 265-4627.';
   const cards = areas.map(area => {
     const excerpt = area.intro.split(/\s+/).slice(0, 22).join(' ');
     return `<article class="area-card">
@@ -852,7 +852,7 @@ function renderHub() {
     about: {
       '@type': 'LocalBusiness',
       name: 'Austin Locksmith Pros',
-      telephone: '+15125550192',
+      telephone: '+17372654627',
       url: siteUrl
     },
     mainEntity: {

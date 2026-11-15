@@ -5,15 +5,15 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const siteUrl = 'https://www.austinlocksmithpros.com';
-const phone = '(512) 555-0192';
-const phoneHref = 'tel:+15125550192';
+const phone = '(737) 265-4627';
+const phoneHref = 'tel:+17372654627';
 const email = 'info@austinlocksmithpros.com';
 
 const pages = [
   {
     slug: 'emergency',
     title: 'Emergency Locksmith Austin TX | 24/7 Lockout Service',
-    description: '24/7 emergency locksmith in Austin, TX - home, car & business lockouts, broken key extraction, fast 10-45 min response. We come to you. Call (512) 555-0192.',
+    description: '24/7 emergency locksmith in Austin, TX - home, car & business lockouts, broken key extraction, fast 10-45 min response. We come to you. Call (737) 265-4627.',
     h1: 'Emergency Locksmith in Austin, TX',
     lead: 'Locked out of your home, car, or business? Our 24/7 emergency locksmiths respond across Austin and Central Texas in 10 to 45 minutes. We come to you - no towing, no trip to a shop.',
     photo: { src: '../images/emergency-locksmith.webp', w: 724, h: 483, alt: 'Emergency locksmith arriving at a home lockout in Austin, TX' },
@@ -37,7 +37,7 @@ const pages = [
   {
     slug: 'residential',
     title: 'Residential Locksmith Austin TX | Lock Change & Rekeying',
-    description: 'Residential locksmith in Austin, TX - lock changes, rekeying, house lockouts, smart lock installation, deadbolts. Mobile service, most jobs done in one visit. Call (512) 555-0192.',
+    description: 'Residential locksmith in Austin, TX - lock changes, rekeying, house lockouts, smart lock installation, deadbolts. Mobile service, most jobs done in one visit. Call (737) 265-4627.',
     h1: 'Residential Locksmith in Austin, TX',
     lead: 'Need a residential locksmith in Austin? We provide fast, professional service for lock changes, lock replacements, door rekeying, and house lockouts anywhere in the city. Our mobile locksmiths arrive fully equipped and complete most residential jobs in one visit.',
     photo: { src: '../images/residential-locksmith-.webp', w: 1280, h: 720, alt: 'Residential locksmith changing a front door lock in Austin, TX' },
@@ -61,7 +61,7 @@ const pages = [
   {
     slug: 'automotive',
     title: 'Automotive Locksmith Austin TX | Car Key Replacement & Programming',
-    description: 'Automotive locksmith in Austin, TX - car key replacement, duplication, transponder programming, ignition repair, car lockouts, trunk unlocking. Mobile service, most jobs one visit. Call (512) 555-0192.',
+    description: 'Automotive locksmith in Austin, TX - car key replacement, duplication, transponder programming, ignition repair, car lockouts, trunk unlocking. Mobile service, most jobs one visit. Call (737) 265-4627.',
     h1: 'Automotive Locksmith in Austin, TX',
     lead: 'Getting locked out of your car or losing your keys can happen at the worst times - that\'s when Austin Locksmith Pros is ready to help. Our automotive locksmith services in Austin cover everything from car key programming to ignition repair, available 24 hours a day across the city and surrounding areas.',
     photo: { src: '../images/automotive-locksmith-.webp', w: 1280, h: 720, alt: 'Automotive locksmith service in Austin, TX' },
@@ -86,7 +86,7 @@ const pages = [
   {
     slug: 'commercial',
     title: 'Commercial Locksmith Austin TX | Business Security & Master Keys',
-    description: 'Commercial locksmith in Austin, TX - business lockouts, master key systems, high-security locks, panic bars, rekeying, door hardware. 24/7 mobile service. Call (512) 555-0192.',
+    description: 'Commercial locksmith in Austin, TX - business lockouts, master key systems, high-security locks, panic bars, rekeying, door hardware. 24/7 mobile service. Call (737) 265-4627.',
     h1: 'Commercial Locksmith in Austin, TX',
     lead: 'Austin Locksmith Pros provides full-service commercial locksmith solutions for offices, retail stores, industrial facilities, and property managers across Austin and Central Texas. Our technicians handle everything from business lockouts to master key systems and high-security upgrades, available 24 hours a day.',
     photo: { src: '../images/commerciallocksmith-1024x576.webp', w: 1024, h: 576, alt: 'Commercial locksmith installing a lock in Austin, TX' },
@@ -180,7 +180,7 @@ for (const p of pages){
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                     <div class="hero-cta">
                         <a href="${phoneHref}" class="btn btn-primary btn-large">
-                            <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
+                            <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(737)&nbsp;265&#8209;4627
                         </a>
                         <a href="../index.html#contact" class="btn btn-secondary btn-large">
                             <svg class="icon" aria-hidden="true"><use href="#icon-clipboard-list"></use></svg> Free Quote
@@ -240,7 +240,7 @@ ${faqItems(p.faqs)}
                 <p>Call Austin Locksmith Pros - we come to you, 24/7, across Austin and Central Texas.</p>
                 <div class="cta-buttons">
                     <a href="${phoneHref}" class="btn btn-primary btn-large">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
+                        <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(737)&nbsp;265&#8209;4627
                     </a>
                     <a href="../index.html#contact" class="btn btn-secondary btn-large">
                         <svg class="icon" aria-hidden="true"><use href="#icon-clipboard-list"></use></svg> Request a Quote

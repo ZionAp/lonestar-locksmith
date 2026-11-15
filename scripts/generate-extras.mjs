@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const siteUrl = 'https://www.austinlocksmithpros.com';
-const phone = '(512) 555-0192';
-const phoneHref = 'tel:+15125550192';
+const phone = '(737) 265-4627';
+const phoneHref = 'tel:+17372654627';
 const email = 'info@austinlocksmithpros.com';
 
 const headTpl = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
@@ -115,7 +115,7 @@ ${p.body}
                 <div class="sidebar-card">
                     <h3>Need a Locksmith?</h3>
                     <p>Call Austin Locksmith Pros - 24/7 across Austin and Central Texas.</p>
-                    <a href="${phoneHref}" class="btn btn-primary btn-full">(512)&nbsp;555&#8209;0192</a>
+                    <a href="${phoneHref}" class="btn btn-primary btn-full">(737)&nbsp;265&#8209;4627</a>
                     <a href="${depth===0?'':'../'}index.html#contact" class="btn btn-secondary btn-full">Free Quote</a>
                 </div>
             </aside>
@@ -143,7 +143,7 @@ ${p.body}
                 <div class="contact-info">
                     <h2>Get In Touch</h2>
                     <ul class="footer-contact">
-                        <li><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> <a href="${phoneHref}">(512)&nbsp;555&#8209;0192</a></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> <a href="${phoneHref}">(737)&nbsp;265&#8209;4627</a></li>
                         <li><svg class="icon" aria-hidden="true"><use href="#icon-envelope"></use></svg> <a href="mailto:${email}">${email}</a></li>
                         <li><svg class="icon" aria-hidden="true"><use href="#icon-map-marker-alt"></use></svg> Austin, TX &amp; Surrounding Areas</li>
                         <li><svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> Open 24/7 | Emergency Response 10-45 Min</li>
@@ -222,7 +222,7 @@ ${p.body}
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                     <div class="hero-cta">
                         <a href="${phoneHref}" class="btn btn-primary btn-large">
-                            <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
+                            <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(737)&nbsp;265&#8209;4627
                         </a>
                         <a href="${depth===0?'':'../'}index.html#contact" class="btn btn-secondary btn-large">
                             <svg class="icon" aria-hidden="true"><use href="#icon-clipboard-list"></use></svg> Free Quote
@@ -262,7 +262,7 @@ ${renderFaqs(p.faqs)}
                 <p>Call Austin Locksmith Pros - we come to you, 24/7, across Austin and Central Texas.</p>
                 <div class="cta-buttons">
                     <a href="${phoneHref}" class="btn btn-primary btn-large">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
+                        <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(737)&nbsp;265&#8209;4627
                     </a>
                     <a href="${depth===0?'':'../'}index.html#contact" class="btn btn-secondary btn-large">
                         <svg class="icon" aria-hidden="true"><use href="#icon-clipboard-list"></use></svg> Request a Quote
@@ -294,7 +294,7 @@ const pages = [];
 // Contact
 pages.push({
   path: '/contact.html', title: 'Contact Austin Locksmith Pros | Austin Locksmith',
-  description: 'Contact Austin Locksmith Pros - 24/7 Austin locksmith. Call (512) 555-0192 or request a free quote. Emergency lockouts, rekeying, car keys, commercial security.',
+  description: 'Contact Austin Locksmith Pros - 24/7 Austin locksmith. Call (737) 265-4627 or request a free quote. Emergency lockouts, rekeying, car keys, commercial security.',
   h1: 'Contact Austin Locksmith Pros',
   lead: 'Locked out or need a locksmith in Austin? Call us any time - a real person answers, and we dispatch from within the city. Or request a free quote and we will contact you within 24 hours.',
   eyebrow: 'Get In Touch',
@@ -302,7 +302,7 @@ pages.push({
 
 // Sub-services
 const subs = [
-  {slug:'lock-rekey', title:'Lock Rekeying Austin TX | Rekey Locks & One Key for All Doors', desc:'Lock rekeying in Austin, TX - change pins so old keys no longer work. Affordable alternative to replacement. Same-day. Call (512) 555-0192.', h1:'Lock Rekeying in Austin, TX', lead:'Rekeying changes the internal pins of your existing lock so old keys no longer work - often more affordable than full lock replacement.', photo:{src:'images/schlage-rekey-kit.webp',w:700,h:419,alt:'Rekeying a Schlage lock cylinder in Austin, TX'}, sections:[
+  {slug:'lock-rekey', title:'Lock Rekeying Austin TX | Rekey Locks & One Key for All Doors', desc:'Lock rekeying in Austin, TX - change pins so old keys no longer work. Affordable alternative to replacement. Same-day. Call (737) 265-4627.', h1:'Lock Rekeying in Austin, TX', lead:'Rekeying changes the internal pins of your existing lock so old keys no longer work - often more affordable than full lock replacement.', photo:{src:'images/schlage-rekey-kit.webp',w:700,h:419,alt:'Rekeying a Schlage lock cylinder in Austin, TX'}, sections:[
     ['What is rekeying?','Rekeying a lock changes the internal pins so a new key operates it and the old key no longer works. The lock itself stays in place - only the cylinder is reconfigured.'],
     ['When should you rekey?','After moving into a new home, tenant turnover, lost or stolen keys, or when you want one key to open every door.'],
     ['Rekey vs. replace','If the hardware is in good condition, rekeying is usually enough and costs less. If locks are outdated, damaged, or you want an upgrade, replacement is recommended.'],
@@ -313,7 +313,7 @@ const subs = [
     ['Can you rekey without the original key?','Yes, but it takes longer and costs more, as the cylinder must be disassembled.'],
     ['How long does rekeying take?','Most jobs take 10 to 45 minutes depending on the number of locks.'],
   ]},
-  {slug:'lock-replacement', title:'Lock Replacement Austin TX | New Locks & Deadbolts Installed', desc:'Lock replacement in Austin, TX - replace damaged, outdated or compromised locks, high-security deadbolts, smart locks. Mobile service. Call (512) 555-0192.', h1:'Lock Replacement in Austin, TX', lead:'Just moved into a new home or want stronger security? We replace damaged, outdated, or compromised locks and install high-security deadbolts and smart lock systems.', photo:{src:'images/do-locksmiths-replace-door-knobs.webp',w:1000,h:500,alt:'Replacing a door knob lock in Austin, TX'}, sections:[
+  {slug:'lock-replacement', title:'Lock Replacement Austin TX | New Locks & Deadbolts Installed', desc:'Lock replacement in Austin, TX - replace damaged, outdated or compromised locks, high-security deadbolts, smart locks. Mobile service. Call (737) 265-4627.', h1:'Lock Replacement in Austin, TX', lead:'Just moved into a new home or want stronger security? We replace damaged, outdated, or compromised locks and install high-security deadbolts and smart lock systems.', photo:{src:'images/do-locksmiths-replace-door-knobs.webp',w:1000,h:500,alt:'Replacing a door knob lock in Austin, TX'}, sections:[
     ['Lock replacement service','We remove old or failing hardware and install new locks with proper alignment and hardware inspection.'],
     ['High-security deadbolts','Upgrade to Grade 1 or Grade 2 deadbolts, reinforced strike plates, and security hardware for stronger protection against forced entry.'],
     ['Smart locks','Keypad entry locks, Wi-Fi smart locks, high-security cylinders, and reinforced strike plates - we help you choose based on door type.'],
@@ -324,7 +324,7 @@ const subs = [
     ['How long does replacement take?','Most jobs take 10 to 45 minutes.'],
     ['What brands do you carry?','Schlage, Kwikset, Medeco, Mul-T-Lock, Baldwin, Yale, and most smart lock brands.'],
   ]},
-  {slug:'car-key-replacement', title:'Car Key Replacement Austin TX | Cut & Program New Keys', desc:'Car key replacement in Austin, TX - cut and program new car keys on the spot for most makes. No dealership, no towing. Call (512) 555-0192.', h1:'Car Key Replacement in Austin, TX', lead:'Losing your car key does not always mean a trip to the dealership. We cut and program new car keys on the spot for most vehicle brands, saving you time and towing costs.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car key on a desk in Austin, TX'}, sections:[
+  {slug:'car-key-replacement', title:'Car Key Replacement Austin TX | Cut & Program New Keys', desc:'Car key replacement in Austin, TX - cut and program new car keys on the spot for most makes. No dealership, no towing. Call (737) 265-4627.', h1:'Car Key Replacement in Austin, TX', lead:'Losing your car key does not always mean a trip to the dealership. We cut and program new car keys on the spot for most vehicle brands, saving you time and towing costs.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car key on a desk in Austin, TX'}, sections:[
     ['All key types','Regular car keys, key fobs, transponder keys, and smart push-to-start systems.'],
     ['On-site programming','Every replacement is programmed to match your car immobilizer, so you get a fully functional key before we leave.'],
     ['No towing needed','We come to you - home, parking lot, or roadside - fully equipped.'],
@@ -335,7 +335,7 @@ const subs = [
     ['Can you program push-to-start keys?','Yes, for most makes and models.'],
     ['Do you come to my car?','Yes. Our mobile technicians come to you.'],
   ]},
-  {slug:'car-key-programming', title:'Car Key Programming Austin TX | Transponder & Fob Programming', desc:'Car key programming in Austin, TX for domestic and imported vehicles. Sync new keys, reset immobilizers, delete lost keys. Call (512) 555-0192.', h1:'Car Key Programming in Austin, TX', lead:'Modern cars require electronic key programming. We handle it with advanced diagnostic tools for domestic and imported vehicles.', photo:{src:'images/Ignition-Switch-1024x576.webp',w:1024,h:576,alt:'Ignition switch and key programming in Austin, TX'}, sections:[
+  {slug:'car-key-programming', title:'Car Key Programming Austin TX | Transponder & Fob Programming', desc:'Car key programming in Austin, TX for domestic and imported vehicles. Sync new keys, reset immobilizers, delete lost keys. Call (737) 265-4627.', h1:'Car Key Programming in Austin, TX', lead:'Modern cars require electronic key programming. We handle it with advanced diagnostic tools for domestic and imported vehicles.', photo:{src:'images/Ignition-Switch-1024x576.webp',w:1024,h:576,alt:'Ignition switch and key programming in Austin, TX'}, sections:[
     ['Makes and models','Ford, Toyota, Honda, Mazda, Hyundai, and most other makes.'],
     ['What programming includes','Syncing new car keys, resetting immobilizer systems, and deleting lost keys from memory.'],
     ['On-site service','We come to you with diagnostic tools and programmers.'],
@@ -346,7 +346,7 @@ const subs = [
     ['Do you need the original key?','Not always. We can program from vehicle data in many cases.'],
     ['Is programming cheaper than the dealership?','Usually yes. We provide upfront pricing before work begins.'],
   ]},
-  {slug:'duplicate-car-keys', title:'Duplicate Car Keys Austin TX | Spare Keys & Fobs', desc:'Car key duplication in Austin, TX - accurate copies for most makes and models, including worn or damaged originals. Call (512) 555-0192.', h1:'Duplicate Car Keys in Austin, TX', lead:'Having a spare key can save you from a lot of stress later. We provide accurate copies for most vehicle makes and models.', photo:{src:'images/car-key-duplication-copy.webp',w:612,h:407,alt:'Car key duplication in Austin, TX'}, sections:[
+  {slug:'duplicate-car-keys', title:'Duplicate Car Keys Austin TX | Spare Keys & Fobs', desc:'Car key duplication in Austin, TX - accurate copies for most makes and models, including worn or damaged originals. Call (737) 265-4627.', h1:'Duplicate Car Keys in Austin, TX', lead:'Having a spare key can save you from a lot of stress later. We provide accurate copies for most vehicle makes and models.', photo:{src:'images/car-key-duplication-copy.webp',w:612,h:407,alt:'Car key duplication in Austin, TX'}, sections:[
     ['Key types','Standard metal keys, remote keys, and smart fobs.'],
     ['Worn originals','We can duplicate even if the original is worn or partially damaged.'],
     ['Precision cutting','Each duplicate is cut and programmed using precision tools.'],
@@ -357,7 +357,7 @@ const subs = [
     ['Do you need the original key?','Yes, for duplication we need a working original.'],
     ['Is a spare key worth it?','Yes - it prevents lockouts and saves on emergency calls.'],
   ]},
-  {slug:'erase-keys-from-memory', title:'Erase Car Keys From Memory Austin TX | Delete Lost Keys', desc:'Erase lost or stolen car keys from your vehicle memory in Austin, TX. Only your new keys will work. Call (512) 555-0192.', h1:'Erase Car Keys From Car Memory in Austin, TX', lead:'If you have lost your keys or had them stolen, it is important to erase them from your car system so only your new keys work.', photo:{src:'images/Erase-Key-From-Car-Memory.webp',w:1023,h:681,alt:'Erasing car keys from vehicle memory in Austin, TX'}, sections:[
+  {slug:'erase-keys-from-memory', title:'Erase Car Keys From Memory Austin TX | Delete Lost Keys', desc:'Erase lost or stolen car keys from your vehicle memory in Austin, TX. Only your new keys will work. Call (737) 265-4627.', h1:'Erase Car Keys From Car Memory in Austin, TX', lead:'If you have lost your keys or had them stolen, it is important to erase them from your car system so only your new keys work.', photo:{src:'images/Erase-Key-From-Car-Memory.webp',w:1023,h:681,alt:'Erasing car keys from vehicle memory in Austin, TX'}, sections:[
     ['Why erase keys','Prevents stolen keys from starting your vehicle.'],
     ['Ideal for','Key loss, vehicle theft, or staff turnover for business fleet vehicles.'],
     ['What we do','Delete old keys from your vehicle computer memory so only new keys work.'],
@@ -368,7 +368,7 @@ const subs = [
     ['Can you erase keys for fleet vehicles?','Yes, ideal for business fleet turnover.'],
     ['Is it necessary after losing one key?','Recommended for security, especially if the key was stolen.'],
   ]},
-  {slug:'master-key-system', title:'Master Key System Austin TX | Design & Installation', desc:'Master key systems in Austin, TX for offices, apartments, warehouses. Design, install, expand, rekey. 24/7 mobile service. Call (512) 555-0192.', h1:'Master Key System in Austin, TX', lead:'A master key system lets business owners or managers open every door while employees access only the areas they need.', photo:{src:'images/commercial-lock-cylinder.webp',w:584,h:394,alt:'Master key system cylinders in Austin, TX'}, sections:[
+  {slug:'master-key-system', title:'Master Key System Austin TX | Design & Installation', desc:'Master key systems in Austin, TX for offices, apartments, warehouses. Design, install, expand, rekey. 24/7 mobile service. Call (737) 265-4627.', h1:'Master Key System in Austin, TX', lead:'A master key system lets business owners or managers open every door while employees access only the areas they need.', photo:{src:'images/commercial-lock-cylinder.webp',w:584,h:394,alt:'Master key system cylinders in Austin, TX'}, sections:[
     ['What we do','We design, install, and maintain customized master key systems for offices, apartment buildings, and warehouses using high-security locks.'],
     ['Expand or reorganize','Existing systems can be expanded, rekeyed, or reorganized to match new staff or layout changes.'],
     ['Benefits','Simplified access management, improved security, and reduced key clutter.'],
@@ -379,7 +379,7 @@ const subs = [
     ['Do you service apartment buildings?','Yes, master key systems for multi-tenant properties.'],
     ['How long does installation take?','Depends on size; most small offices are done in a day.'],
   ]},
-  {slug:'access-control', title:'Access Control System Austin TX | Keypads & Electronic Locks', desc:'Access control systems in Austin, TX - keypads, electronic locks, smart entry. Install and service for homes and businesses. Call (512) 555-0192.', h1:'Access Control System in Austin, TX', lead:'Control who enters your property with keypads, electronic locks, and smart entry systems for homes and businesses.', photo:{src:'images/What-do-locksmiths-use-ottawa.webp',w:745,h:400,alt:'Locksmith tools for access control in Austin, TX'}, sections:[
+  {slug:'access-control', title:'Access Control System Austin TX | Keypads & Electronic Locks', desc:'Access control systems in Austin, TX - keypads, electronic locks, smart entry. Install and service for homes and businesses. Call (737) 265-4627.', h1:'Access Control System in Austin, TX', lead:'Control who enters your property with keypads, electronic locks, and smart entry systems for homes and businesses.', photo:{src:'images/What-do-locksmiths-use-ottawa.webp',w:745,h:400,alt:'Locksmith tools for access control in Austin, TX'}, sections:[
     ['What we install','Keypads, electronic access control, smart lock systems, and video entry.'],
     ['For businesses','Manage staff access, track entry, and revoke credentials instantly.'],
     ['For homes','Keyless entry, guest codes, and remote access via app.'],
@@ -390,7 +390,7 @@ const subs = [
     ['Is it secure?','Yes. Electronic access control adds layers of security over mechanical locks.'],
     ['Do you offer maintenance?','Yes, we service and repair access control systems.'],
   ]},
-  {slug:'panic-bars', title:'Panic Bars & Exit Devices Austin TX | Code-Compliant Installation', desc:'Panic bars and exit devices in Austin, TX - install and repair code-compliant exit systems for offices, schools, retail. Call (512) 555-0192.', h1:'Panic Bars & Exit Devices in Austin, TX', lead:'We install and repair panic bars and exit devices that comply with commercial safety codes.', photo:{src:'images/commerciallocksmith-1024x576.webp',w:1024,h:576,alt:'Commercial exit device installation in Austin, TX'}, sections:[
+  {slug:'panic-bars', title:'Panic Bars & Exit Devices Austin TX | Code-Compliant Installation', desc:'Panic bars and exit devices in Austin, TX - install and repair code-compliant exit systems for offices, schools, retail. Call (737) 265-4627.', h1:'Panic Bars & Exit Devices in Austin, TX', lead:'We install and repair panic bars and exit devices that comply with commercial safety codes.', photo:{src:'images/commerciallocksmith-1024x576.webp',w:1024,h:576,alt:'Commercial exit device installation in Austin, TX'}, sections:[
     ['What we do','Install and repair panic bars and exit devices for offices, schools, and retail stores.'],
     ['Alarmed & non-alarmed','Both alarmed and non-alarmed exit systems available.'],
     ['Code compliance','Installed to meet commercial safety codes.'],
@@ -401,7 +401,7 @@ const subs = [
     ['How long does installation take?','Most jobs take 1 to 2 hours.'],
     ['Do you install on fire-rated doors?','Yes, we service metal, glass, and fire-rated doors.'],
   ]},
-  {slug:'home-lockout', title:'House Lockout Austin TX | 24/7 Home Lockout Service', desc:'House lockout service in Austin, TX - 24/7, damage-free entry, 10-45 min response. Call (512) 555-0192.', h1:'House Lockout Service in Austin, TX', lead:'Locked out of your home? Our residential locksmiths provide 24-hour house lockout service across Austin.', photo:{src:'images/house-lockout.webp',w:768,h:480,alt:'House lockout service in Austin, TX'}, sections:[
+  {slug:'home-lockout', title:'House Lockout Austin TX | 24/7 Home Lockout Service', desc:'House lockout service in Austin, TX - 24/7, damage-free entry, 10-45 min response. Call (737) 265-4627.', h1:'House Lockout Service in Austin, TX', lead:'Locked out of your home? Our residential locksmiths provide 24-hour house lockout service across Austin.', photo:{src:'images/house-lockout.webp',w:768,h:480,alt:'House lockout service in Austin, TX'}, sections:[
     ['Damage-free entry','We use professional unlocking tools designed to avoid damage whenever possible.'],
     ['All property types','Houses, condos, and apartments.'],
     ['Fast response','Average response time 20 to 30 minutes.'],
@@ -412,7 +412,7 @@ const subs = [
     ['Are you available 24/7?','Yes, every day of the year.'],
     ['What if my lock is damaged?','We can repair or replace it on the spot.'],
   ]},
-  {slug:'car-lockout', title:'Car Lockout Austin TX | 24/7 Vehicle Unlock Service', desc:'Car lockout service in Austin, TX - unlock all makes and models without damage, 24/7. Call (512) 555-0192.', h1:'Car Lockout Service in Austin, TX', lead:'Locked out of your car? We help you get back in quickly and safely using professional tools.', photo:{src:'images/automotive-locksmith-.webp',w:1280,h:720,alt:'Car lockout service in Austin, TX'}, sections:[
+  {slug:'car-lockout', title:'Car Lockout Austin TX | 24/7 Vehicle Unlock Service', desc:'Car lockout service in Austin, TX - unlock all makes and models without damage, 24/7. Call (737) 265-4627.', h1:'Car Lockout Service in Austin, TX', lead:'Locked out of your car? We help you get back in quickly and safely using professional tools.', photo:{src:'images/automotive-locksmith-.webp',w:1280,h:720,alt:'Car lockout service in Austin, TX'}, sections:[
     ['All vehicles','Cars, SUVs, and trucks of all makes and models.'],
     ['No damage','We unlock without scratching paint or damaging weather seals.'],
     ['24/7 availability','Service available throughout Austin and nearby communities.'],
@@ -423,7 +423,7 @@ const subs = [
     ['Do you damage the car?','No, we use non-destructive techniques.'],
     ['Can you make a key too?','Yes, we can cut and program a new key on the spot.'],
   ]},
-  {slug:'business-lockout', title:'Business Lockout Austin TX | Commercial Entry Service', desc:'Business lockout service in Austin, TX - fast entry for offices, retail, industrial properties. 24/7. Call (512) 555-0192.', h1:'Business Lockout Service in Austin, TX', lead:'Locked out of your office, retail store, or commercial property? We provide emergency access for businesses, including after-hours response.', photo:{src:'images/commerciallocksmith-1024x576.webp',w:1024,h:576,alt:'Business lockout service in Austin, TX'}, sections:[
+  {slug:'business-lockout', title:'Business Lockout Austin TX | Commercial Entry Service', desc:'Business lockout service in Austin, TX - fast entry for offices, retail, industrial properties. 24/7. Call (737) 265-4627.', h1:'Business Lockout Service in Austin, TX', lead:'Locked out of your office, retail store, or commercial property? We provide emergency access for businesses, including after-hours response.', photo:{src:'images/commerciallocksmith-1024x576.webp',w:1024,h:576,alt:'Business lockout service in Austin, TX'}, sections:[
     ['All commercial locks','We service all commercial-grade locks, keypads, and access control systems.'],
     ['After-hours response','Available 24/7 for property managers and building supervisors.'],
     ['On-site repair','We can unlock, rekey, or replace locks during the same visit.'],
@@ -434,7 +434,7 @@ const subs = [
     ['Do you provide upfront pricing?','Yes, clear pricing before work begins.'],
     ['Can you rekey after entry?','Yes, on the same visit.'],
   ]},
-  {slug:'broken-key-extraction', title:'Broken Key Extraction Austin TX | Remove Jammed Keys', desc:'Broken key extraction in Austin, TX - remove jammed or broken keys from locks and ignitions. 24/7. Call (512) 555-0192.', h1:'Broken Key Extraction in Austin, TX', lead:'If your key snaps inside the lock or ignition, we safely extract the broken piece and restore functionality.', photo:{src:'images/locksmith-door.webp',w:643,h:428,alt:'Broken key extraction in Austin, TX'}, sections:[
+  {slug:'broken-key-extraction', title:'Broken Key Extraction Austin TX | Remove Jammed Keys', desc:'Broken key extraction in Austin, TX - remove jammed or broken keys from locks and ignitions. 24/7. Call (737) 265-4627.', h1:'Broken Key Extraction in Austin, TX', lead:'If your key snaps inside the lock or ignition, we safely extract the broken piece and restore functionality.', photo:{src:'images/locksmith-door.webp',w:643,h:428,alt:'Broken key extraction in Austin, TX'}, sections:[
     ['Locks and ignitions','We extract broken keys from door locks and car ignitions.'],
     ['No damage','Specialized tools extract the key without damaging the cylinder.'],
     ['New key on the spot','In many cases we cut and program a new key immediately.'],
@@ -445,7 +445,7 @@ const subs = [
     ['Can you make a new key?','Yes, often on the spot.'],
     ['How long does it take?','Most jobs take 10 to 45 minutes.'],
   ]},
-  {slug:'car-trunk-opening', title:'Car Trunk Opening Austin TX | Unlock Jammed Trunks', desc:'Car trunk opening service in Austin, TX - open jammed, broken, or electronically locked trunks. 24/7. Call (512) 555-0192.', h1:'Car Trunk Opening in Austin, TX', lead:'If your car trunk will not open, we can help - broken latch, jammed key, or electronic malfunction.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car trunk opening service in Austin, TX'}, sections:[
+  {slug:'car-trunk-opening', title:'Car Trunk Opening Austin TX | Unlock Jammed Trunks', desc:'Car trunk opening service in Austin, TX - open jammed, broken, or electronically locked trunks. 24/7. Call (737) 265-4627.', h1:'Car Trunk Opening in Austin, TX', lead:'If your car trunk will not open, we can help - broken latch, jammed key, or electronic malfunction.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car trunk opening service in Austin, TX'}, sections:[
     ['All makes and models','We service all vehicle makes and models.'],
     ['Electronic trunks','We handle remote and keyless entry systems.'],
     ['No damage','We open the trunk safely without damage.'],
@@ -504,7 +504,7 @@ const posts = [
 <p>Yes, but it is more difficult and time-consuming, and costs more, because the cylinder must be disassembled. A professional locksmith can do it.</p>
 <h2>Rekey vs. replace</h2>
 <p>Rekeying keeps the existing lock and changes the key. Replacing installs new hardware. Rekey if the hardware is in good condition; replace if locks are outdated or damaged.</p>
-<p>Need help? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need help? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'can-a-locksmith-make-a-car-key-from-vin', title:'Can a Locksmith Make a Car Key From a VIN? | Austin Locksmith Pros', desc:'Can a locksmith make a car key from a VIN number? Learn the feasibility, limitations, and steps involved in VIN-based car key replacement.', h1:'Can a Locksmith Make a Car Key From a VIN Number?', lead:'Modern locksmiths are equipped with advanced tools. Whether a locksmith can make a car key from a VIN depends on the make and model.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car key replacement in Austin, TX'}, body:`
 <p>The Vehicle Identification Number (VIN) is a unique code assigned to every vehicle. It provides crucial information about the car but does not typically include the specific key code required for key cutting.</p>
@@ -519,7 +519,7 @@ const posts = [
 <li>Cut and program the new key</li>
 <li>Test and verify functionality</li>
 </ol>
-<p>Consult a qualified locksmith to ensure accuracy. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Consult a qualified locksmith to ensure accuracy. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'can-a-locksmith-pick-a-schlage-deadbolt', title:'Can a Locksmith Pick a Schlage Deadbolt? | Austin Locksmith Pros', desc:'Can a locksmith pick a Schlage deadbolt? Learn about Schlage security features, picking difficulty, and why professional locksmiths matter.', h1:'Can a Locksmith Pick a Schlage Deadbolt?', lead:'Schlage deadbolts are well-regarded for durability and security. A skilled locksmith can pick one, but it is significantly more challenging than a standard lock.', photo:{src:'images/locksmith-door.webp',w:643,h:428,alt:'Locksmith servicing a Schlage deadbolt in Austin, TX'}, body:`
 <p>Schlage deadbolts often include anti-pick pins (spool, serrated, or mushroom), high-quality materials, and complex keyways that resist picking. However, a trained locksmith with the right tools can overcome these obstacles.</p>
@@ -527,7 +527,7 @@ const posts = [
 <p>Experienced locksmiths use advanced pick sets, electric pick guns, and specialized tools. They also adhere to a strict code of ethics and verify ownership before servicing a lock.</p>
 <h2>Ethical considerations</h2>
 <p>Always hire a licensed, reputable locksmith. Unauthorized lock picking is illegal. A professional will ask for proof of ownership before attempting to pick a lock.</p>
-<p>Need lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'top-10-door-lock-brands', title:'Top 10 Most Trusted Door Lock Brands | Austin Locksmith Pros', desc:'The most trusted door lock brands - Schlage, Kwikset, Medeco, Mul-T-Lock, Baldwin, Yale and more. A guide from Austin Locksmith Pros.', h1:'Top 10 Most Trusted Door Lock Brands', lead:'Door lock brands are an important part of home security. Here are the most trusted brands for residential and commercial use.', photo:{src:'images/do-locksmiths-replace-door-knobs.webp',w:1000,h:500,alt:'Door lock brands and hardware in Austin, TX'}, body:`
 <p>Choosing the right lock brand matters for security and durability. Here are trusted brands we service and install:</p>
@@ -541,7 +541,7 @@ const posts = [
 </ul>
 <h2>Lock grades</h2>
 <p>ANSI/BHMA grades: Grade 1 (highest), Grade 2 (high quality), Grade 3 (basic). For most homes, Grade 2 is sufficient; upgrade to Grade 1 for high-security needs.</p>
-<p>Need help choosing? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need help choosing? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'electronic-access-control', title:'Electronic Access Control: Future of Security | Austin Locksmith Pros', desc:'Electronic access control systems for homes and businesses in Austin. Keycards, biometrics, mobile access, cloud-based systems.', h1:'Electronic Access Control: The Future of Security', lead:'Electronic access control systems have revolutionized security for businesses, residential areas, and organizations.', photo:{src:'images/What-do-locksmiths-use-ottawa.webp',w:745,h:400,alt:'Access control systems in Austin, TX'}, body:`
 <p>Electronic access control uses electronic devices to control access to a specific area instead of traditional keys and locks.</p>
@@ -554,7 +554,7 @@ const posts = [
 </ul>
 <h2>Benefits</h2>
 <p>Enhanced security, real-time monitoring, flexibility, cost savings, and integration with alarms and surveillance.</p>
-<p>Interested in access control? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Interested in access control? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'best-smart-locks', title:'Best Smart Locks for Your Home | Austin Locksmith Pros', desc:'A guide to the best smart locks for Austin homeowners - Schlage Encode, August, Kwikset, Yale and more. Installation by Austin Locksmith Pros.', h1:'The Best Smart Locks for Your Home', lead:'Smart locks offer keyless entry, remote access, and integration with smart home systems. Here is what to consider.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Smart lock installation in Austin, TX'}, body:`
 <p>When choosing a smart lock, consider ANSI/BHMA grade (Grade 1 highest), compatibility with your smart home ecosystem, security features, and ease of use.</p>
@@ -565,7 +565,7 @@ const posts = [
 <li><strong>Kwikset SmartCode 916</strong> - touchscreen, Z-Wave</li>
 <li><strong>Yale Assure</strong> - touchscreen keypad, smart home compatible</li>
 </ul>
-<p>We install and program smart locks across Austin. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>We install and program smart locks across Austin. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'which-locks-are-hard-to-open', title:'Which Locks Are Hard to Open? | Austin Locksmith Pros', desc:'High-security, electronic, smart, bank vault, and automotive locks that are hardest to open - explained by Austin Locksmith Pros.', h1:'Which Locks Are Hard to Open?', lead:'Certain locks pose significant challenges even for experienced locksmiths. Here are the types that are hardest to open.', photo:{src:'images/commercial-lock-cylinder.webp',w:584,h:394,alt:'High-security lock in Austin, TX'}, body:`
 <ul>
@@ -575,7 +575,7 @@ const posts = [
 <li><strong>Automobile locks</strong> - transponder keys, sidebar pins, electronic ignition</li>
 <li><strong>Specialty and custom locks</strong> - unusual mechanisms, limited documentation</li>
 </ul>
-<p>Need high-security lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need high-security lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
   {slug:'does-landlord-pay-for-locksmith', title:'Does Your Landlord Pay for a Locksmith? | Austin Locksmith Pros', desc:'Who pays for locksmith services in a rental - landlord vs tenant responsibilities, lockouts, and lock changes in Austin, TX.', h1:'Does Your Landlord Have to Pay for a Locksmith?', lead:'When facing a lockout, tenants often wonder who bears the responsibility. Here is how landlord-tenant responsibilities typically work.', photo:{src:'images/house-lockout.webp',w:768,h:480,alt:'House lockout in Austin, TX'}, body:`
 <p>Landlords are generally responsible for maintaining functional locks and covering repairs due to normal wear and tear. Tenants may be liable for costs from lost keys or negligent damage.</p>
@@ -585,7 +585,7 @@ const posts = [
 <p>Lost keys, damage from negligence, or unauthorized lock changes may be the tenant's cost.</p>
 <h2>Communication</h2>
 <p>Prompt communication between landlord and tenant resolves lock issues fastest. When in doubt, consult your lease and local laws.</p>
-<p>Need a locksmith in Austin? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need a locksmith in Austin? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
 ];
 for (const post of posts){
@@ -605,7 +605,7 @@ for (const post of posts){
 pages.push({
   path: '/service-areas.html',
   title: 'Service Areas | Austin Locksmith Pros & Central Texas',
-  description: 'Austin Locksmith Pros serves Austin and 22 surrounding Central Texas cities. 24/7 mobile locksmith. Call (512) 555-0192.',
+  description: 'Austin Locksmith Pros serves Austin and 22 surrounding Central Texas cities. 24/7 mobile locksmith. Call (737) 265-4627.',
   h1: 'Service Areas',
   lead: 'We provide 24/7 mobile locksmith service across Austin and 22 surrounding Central Texas cities. A real locksmith, dispatched from within the region.',
   eyebrow: 'Where We Serve',

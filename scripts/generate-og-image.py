@@ -174,7 +174,7 @@ def build():
     draw_text(buf, '24/7 EMERGENCY LOCKSMITH SERVICE', text_x, 292, 4, SILVER)
     draw_text(buf, 'WE COME TO YOU - 10-45 MIN RESPONSE', text_x, 330, 3, DIM)
 
-    draw_text(buf, '(512) 555-0192', text_x, 396, 6, GOLD)
+    draw_text(buf, '(737) 265-4627', text_x, 396, 6, GOLD)
     draw_text(buf, 'INFO@AUSTINLOCKSMITHPROS.COM', text_x, 470, 2, DIM)
 
     draw_text(buf, 'AUSTIN - ROUND ROCK - CEDAR PARK - GEORGETOWN - 22 AREAS', text_x, 560, 2, blend(DIM, BG_BOTTOM, 0.25))
