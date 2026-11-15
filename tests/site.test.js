@@ -176,7 +176,7 @@ async function main() {
 
     const endpoint = fs.readFileSync(path.join(siteRoot, 'send-quote.php'), 'utf8');
     assert.match(endpoint, /^\s*<\?php/);
-    assert.match(endpoint, /MAIL_TO = 'info\@lonestarlocksmithsolutions\.com'/);
+    assert.match(endpoint, /MAIL_TO = 'info\@austinlocksmithpros\.com'/);
     assert.match(endpoint, /FILTER_VALIDATE_EMAIL/);
     assert.match(endpoint, /function allows_quote/);
     assert.match(endpoint, /@mail\(/);
@@ -257,7 +257,7 @@ async function main() {
     assert.ok(types.includes('FAQPage'), 'missing FAQPage');
     const biz = blocks.find(b => b['@type'] === 'LocalBusiness');
     assert.ok(biz.image, 'LocalBusiness missing image');
-    assert.strictEqual(biz.email, 'info@lonestarlocksmithsolutions.com', 'LocalBusiness email is outdated');
+    assert.strictEqual(biz.email, 'info@austinlocksmithpros.com', 'LocalBusiness email is outdated');
     assert.ok(biz.openingHoursSpecification, 'LocalBusiness missing hours');
     assert.ok(Array.isArray(biz.sameAs) && biz.sameAs.length, 'LocalBusiness missing sameAs');
   });

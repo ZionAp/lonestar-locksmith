@@ -2,9 +2,9 @@
 declare(strict_types=1);
 ini_set('display_errors', '0');
 
-const MAIL_TO = 'info@lonestarlocksmithsolutions.com';
-const MAIL_FROM = 'no-reply@lonestarlocksmithsolutions.com';
-const SITE_NAME = 'LoneStar Locksmith Solutions';
+const MAIL_TO = 'info@austinlocksmithpros.com';
+const MAIL_FROM = 'no-reply@austinlocksmithpros.com';
+const SITE_NAME = 'Austin Locksmith Pros';
 const MAX_BODY_BYTES = 20000;
 const RATE_LIMIT = 5;
 const RATE_WINDOW = 900;
@@ -211,8 +211,8 @@ $headers = [
 $sent = @mail(MAIL_TO, $subject, $body, implode("\r\n", $headers), '-f' . MAIL_FROM);
 
 if (!$sent) {
-    error_log('LoneStar Locksmith quote form mail() failed for ' . $phoneDigits);
-    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.']);
+    error_log('Austin Locksmith Pros quote form mail() failed for ' . $phoneDigits);
+    finish(500, ['ok' => false, 'message' => 'We could not send your request right now. Please call (512) 555-0192 or email info@austinlocksmithpros.com.']);
 }
 
 finish(200, ['ok' => true, 'message' => 'Thank you ' . $name . '! Your quote request has been sent. We will contact you at ' . $phone . ' within 24 hours.']);

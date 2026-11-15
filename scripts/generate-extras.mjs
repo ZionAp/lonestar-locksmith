@@ -4,10 +4,10 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
-const siteUrl = 'https://www.lonestarlocksmithsolutions.com';
+const siteUrl = 'https://www.austinlocksmithpros.com';
 const phone = '(512) 555-0192';
 const phoneHref = 'tel:+15125550192';
-const email = 'info@lonestarlocksmithsolutions.com';
+const email = 'info@austinlocksmithpros.com';
 
 const headTpl = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const headStart = headTpl.indexOf('<main id="main">');
@@ -99,7 +99,7 @@ function renderPage(p, depth){
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-eyebrow">LoneStar Locksmith Blog</p>
+                    <p class="hero-eyebrow">Austin Locksmith Pros Blog</p>
                     <h1 class="hero-title">${esc(p.h1)}</h1>
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                 </div>
@@ -114,7 +114,7 @@ ${p.body}
             <aside class="area-sidebar">
                 <div class="sidebar-card">
                     <h3>Need a Locksmith?</h3>
-                    <p>Call LoneStar Locksmith Solutions - 24/7 across Austin and Central Texas.</p>
+                    <p>Call Austin Locksmith Pros - 24/7 across Austin and Central Texas.</p>
                     <a href="${phoneHref}" class="btn btn-primary btn-full">(512)&nbsp;555&#8209;0192</a>
                     <a href="${depth===0?'':'../'}index.html#contact" class="btn btn-secondary btn-full">Free Quote</a>
                 </div>
@@ -130,7 +130,7 @@ ${p.body}
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-eyebrow">Contact LoneStar</p>
+                    <p class="hero-eyebrow">Contact Austin Locksmith Pros</p>
                     <h1 class="hero-title">${esc(p.h1)}</h1>
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                 </div>
@@ -217,7 +217,7 @@ ${p.body}
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-eyebrow">${esc(p.eyebrow || 'LoneStar Locksmith Solutions')}</p>
+                    <p class="hero-eyebrow">${esc(p.eyebrow || 'Austin Locksmith Pros')}</p>
                     <h1 class="hero-title">${esc(p.h1)}</h1>
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                     <div class="hero-cta">
@@ -259,7 +259,7 @@ ${renderFaqs(p.faqs)}
         <div class="container">
             <div class="cta-content">
                 <h2>Need a locksmith right now?</h2>
-                <p>Call LoneStar Locksmith Solutions - we come to you, 24/7, across Austin and Central Texas.</p>
+                <p>Call Austin Locksmith Pros - we come to you, 24/7, across Austin and Central Texas.</p>
                 <div class="cta-buttons">
                     <a href="${phoneHref}" class="btn btn-primary btn-large">
                         <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
@@ -293,9 +293,9 @@ const pages = [];
 
 // Contact
 pages.push({
-  path: '/contact.html', title: 'Contact LoneStar Locksmith Solutions | Austin Locksmith',
-  description: 'Contact LoneStar Locksmith Solutions - 24/7 Austin locksmith. Call (512) 555-0192 or request a free quote. Emergency lockouts, rekeying, car keys, commercial security.',
-  h1: 'Contact LoneStar Locksmith Solutions',
+  path: '/contact.html', title: 'Contact Austin Locksmith Pros | Austin Locksmith',
+  description: 'Contact Austin Locksmith Pros - 24/7 Austin locksmith. Call (512) 555-0192 or request a free quote. Emergency lockouts, rekeying, car keys, commercial security.',
+  h1: 'Contact Austin Locksmith Pros',
   lead: 'Locked out or need a locksmith in Austin? Call us any time - a real person answers, and we dispatch from within the city. Or request a free quote and we will contact you within 24 hours.',
   eyebrow: 'Get In Touch',
 });
@@ -464,7 +464,7 @@ for (const sub of subs){
     description: sub.desc,
     h1: sub.h1,
     lead: sub.lead,
-    eyebrow: 'LoneStar Locksmith Solutions',
+    eyebrow: 'Austin Locksmith Pros',
     photo: sub.photo,
     sections: sub.sections,
     faqs: sub.faqs,
@@ -474,9 +474,9 @@ for (const sub of subs){
 // Blog index
 pages.push({
   path: '/blog/index.html',
-  title: 'Locksmith Blog | Security Tips & Local Guides | LoneStar Austin',
-  description: 'Locksmith tips, security guides, and local Austin locksmith advice from LoneStar Locksmith Solutions. Rekeying, car keys, smart locks, and more.',
-  h1: 'LoneStar Locksmith Blog',
+  title: 'Locksmith Blog | Security Tips & Guides | Austin Locksmith Pros',
+  description: 'Locksmith tips, security guides, and local Austin locksmith advice from Austin Locksmith Pros. Rekeying, car keys, smart locks, and more.',
+  h1: 'Austin Locksmith Pros Blog',
   lead: 'Security tips, lock guides, and local Austin locksmith advice to help you protect your home, car, and business.',
   eyebrow: 'Blog',
   sections: [
@@ -489,7 +489,7 @@ pages.push({
 
 // Blog posts
 const posts = [
-  {slug:'what-is-rekeying-a-lock', title:'What Is Rekeying a Lock? | LoneStar Locksmith Austin', desc:'Learn what rekeying a lock means, how it works, when to rekey, and why it is a cost-effective alternative to replacing locks.', h1:'What Is Rekeying a Lock?', lead:'Rekeying a lock is the process of changing the internal mechanism so it can be operated by a different key. The old key no longer works.', photo:{src:'images/schlage-rekey-kit.webp',w:700,h:419,alt:'Rekeying a lock cylinder in Austin, TX'}, body:`
+  {slug:'what-is-rekeying-a-lock', title:'What Is Rekeying a Lock? | Austin Locksmith Pros', desc:'Learn what rekeying a lock means, how it works, when to rekey, and why it is a cost-effective alternative to replacing locks.', h1:'What Is Rekeying a Lock?', lead:'Rekeying a lock is the process of changing the internal mechanism so it can be operated by a different key. The old key no longer works.', photo:{src:'images/schlage-rekey-kit.webp',w:700,h:419,alt:'Rekeying a lock cylinder in Austin, TX'}, body:`
 <p>Rekeying a lock changes the internal pins of the cylinder so a new key operates it and the old key no longer works. The lock itself stays in place - only the cylinder is reconfigured. It is a cost-effective alternative to replacing the entire lock.</p>
 <h2>How rekeying works</h2>
 <p>A locksmith removes the cylinder, replaces the key pins and tumblers to match a new key, and reassembles the lock. If you want one key to open several doors, the locks must be the same brand or keyway.</p>
@@ -504,9 +504,9 @@ const posts = [
 <p>Yes, but it is more difficult and time-consuming, and costs more, because the cylinder must be disassembled. A professional locksmith can do it.</p>
 <h2>Rekey vs. replace</h2>
 <p>Rekeying keeps the existing lock and changes the key. Replacing installs new hardware. Rekey if the hardware is in good condition; replace if locks are outdated or damaged.</p>
-<p>Need help? <a href="../index.html#contact">Contact LoneStar Locksmith Solutions</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need help? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'can-a-locksmith-make-a-car-key-from-vin', title:'Can a Locksmith Make a Car Key From a VIN? | LoneStar Austin', desc:'Can a locksmith make a car key from a VIN number? Learn the feasibility, limitations, and steps involved in VIN-based car key replacement.', h1:'Can a Locksmith Make a Car Key From a VIN Number?', lead:'Modern locksmiths are equipped with advanced tools. Whether a locksmith can make a car key from a VIN depends on the make and model.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car key replacement in Austin, TX'}, body:`
+  {slug:'can-a-locksmith-make-a-car-key-from-vin', title:'Can a Locksmith Make a Car Key From a VIN? | Austin Locksmith Pros', desc:'Can a locksmith make a car key from a VIN number? Learn the feasibility, limitations, and steps involved in VIN-based car key replacement.', h1:'Can a Locksmith Make a Car Key From a VIN Number?', lead:'Modern locksmiths are equipped with advanced tools. Whether a locksmith can make a car key from a VIN depends on the make and model.', photo:{src:'images/pexels-negative-space-97075-1024x683.webp',w:1024,h:683,alt:'Car key replacement in Austin, TX'}, body:`
 <p>The Vehicle Identification Number (VIN) is a unique code assigned to every vehicle. It provides crucial information about the car but does not typically include the specific key code required for key cutting.</p>
 <h2>Feasibility</h2>
 <p>The ability to create a new car key from a VIN primarily depends on the specific make and model. Locksmiths may use specialized databases to retrieve the key code necessary for cutting.</p>
@@ -519,17 +519,17 @@ const posts = [
 <li>Cut and program the new key</li>
 <li>Test and verify functionality</li>
 </ol>
-<p>Consult a qualified locksmith to ensure accuracy. <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Consult a qualified locksmith to ensure accuracy. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'can-a-locksmith-pick-a-schlage-deadbolt', title:'Can a Locksmith Pick a Schlage Deadbolt? | LoneStar Austin', desc:'Can a locksmith pick a Schlage deadbolt? Learn about Schlage security features, picking difficulty, and why professional locksmiths matter.', h1:'Can a Locksmith Pick a Schlage Deadbolt?', lead:'Schlage deadbolts are well-regarded for durability and security. A skilled locksmith can pick one, but it is significantly more challenging than a standard lock.', photo:{src:'images/locksmith-door.webp',w:643,h:428,alt:'Locksmith servicing a Schlage deadbolt in Austin, TX'}, body:`
+  {slug:'can-a-locksmith-pick-a-schlage-deadbolt', title:'Can a Locksmith Pick a Schlage Deadbolt? | Austin Locksmith Pros', desc:'Can a locksmith pick a Schlage deadbolt? Learn about Schlage security features, picking difficulty, and why professional locksmiths matter.', h1:'Can a Locksmith Pick a Schlage Deadbolt?', lead:'Schlage deadbolts are well-regarded for durability and security. A skilled locksmith can pick one, but it is significantly more challenging than a standard lock.', photo:{src:'images/locksmith-door.webp',w:643,h:428,alt:'Locksmith servicing a Schlage deadbolt in Austin, TX'}, body:`
 <p>Schlage deadbolts often include anti-pick pins (spool, serrated, or mushroom), high-quality materials, and complex keyways that resist picking. However, a trained locksmith with the right tools can overcome these obstacles.</p>
 <h2>Locksmith skills and tools</h2>
 <p>Experienced locksmiths use advanced pick sets, electric pick guns, and specialized tools. They also adhere to a strict code of ethics and verify ownership before servicing a lock.</p>
 <h2>Ethical considerations</h2>
 <p>Always hire a licensed, reputable locksmith. Unauthorized lock picking is illegal. A professional will ask for proof of ownership before attempting to pick a lock.</p>
-<p>Need lock service? <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'top-10-door-lock-brands', title:'Top 10 Most Trusted Door Lock Brands | LoneStar Austin', desc:'The most trusted door lock brands - Schlage, Kwikset, Medeco, Mul-T-Lock, Baldwin, Yale and more. A guide from LoneStar Locksmith Austin.', h1:'Top 10 Most Trusted Door Lock Brands', lead:'Door lock brands are an important part of home security. Here are the most trusted brands for residential and commercial use.', photo:{src:'images/do-locksmiths-replace-door-knobs.webp',w:1000,h:500,alt:'Door lock brands and hardware in Austin, TX'}, body:`
+  {slug:'top-10-door-lock-brands', title:'Top 10 Most Trusted Door Lock Brands | Austin Locksmith Pros', desc:'The most trusted door lock brands - Schlage, Kwikset, Medeco, Mul-T-Lock, Baldwin, Yale and more. A guide from Austin Locksmith Pros.', h1:'Top 10 Most Trusted Door Lock Brands', lead:'Door lock brands are an important part of home security. Here are the most trusted brands for residential and commercial use.', photo:{src:'images/do-locksmiths-replace-door-knobs.webp',w:1000,h:500,alt:'Door lock brands and hardware in Austin, TX'}, body:`
 <p>Choosing the right lock brand matters for security and durability. Here are trusted brands we service and install:</p>
 <ul>
 <li><strong>Schlage</strong> - high-security residential and commercial locks</li>
@@ -541,9 +541,9 @@ const posts = [
 </ul>
 <h2>Lock grades</h2>
 <p>ANSI/BHMA grades: Grade 1 (highest), Grade 2 (high quality), Grade 3 (basic). For most homes, Grade 2 is sufficient; upgrade to Grade 1 for high-security needs.</p>
-<p>Need help choosing? <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need help choosing? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'electronic-access-control', title:'Electronic Access Control: The Future of Security | LoneStar Austin', desc:'Electronic access control systems for homes and businesses in Austin. Keycards, biometrics, mobile access, cloud-based systems.', h1:'Electronic Access Control: The Future of Security', lead:'Electronic access control systems have revolutionized security for businesses, residential areas, and organizations.', photo:{src:'images/What-do-locksmiths-use-ottawa.webp',w:745,h:400,alt:'Access control systems in Austin, TX'}, body:`
+  {slug:'electronic-access-control', title:'Electronic Access Control: Future of Security | Austin Locksmith Pros', desc:'Electronic access control systems for homes and businesses in Austin. Keycards, biometrics, mobile access, cloud-based systems.', h1:'Electronic Access Control: The Future of Security', lead:'Electronic access control systems have revolutionized security for businesses, residential areas, and organizations.', photo:{src:'images/What-do-locksmiths-use-ottawa.webp',w:745,h:400,alt:'Access control systems in Austin, TX'}, body:`
 <p>Electronic access control uses electronic devices to control access to a specific area instead of traditional keys and locks.</p>
 <h2>Types of systems</h2>
 <ul>
@@ -554,9 +554,9 @@ const posts = [
 </ul>
 <h2>Benefits</h2>
 <p>Enhanced security, real-time monitoring, flexibility, cost savings, and integration with alarms and surveillance.</p>
-<p>Interested in access control? <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Interested in access control? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'best-smart-locks', title:'Best Smart Locks for Your Home | LoneStar Locksmith Austin', desc:'A guide to the best smart locks for Austin homeowners - Schlage Encode, August, Kwikset, Yale and more. Installation by LoneStar.', h1:'The Best Smart Locks for Your Home', lead:'Smart locks offer keyless entry, remote access, and integration with smart home systems. Here is what to consider.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Smart lock installation in Austin, TX'}, body:`
+  {slug:'best-smart-locks', title:'Best Smart Locks for Your Home | Austin Locksmith Pros', desc:'A guide to the best smart locks for Austin homeowners - Schlage Encode, August, Kwikset, Yale and more. Installation by Austin Locksmith Pros.', h1:'The Best Smart Locks for Your Home', lead:'Smart locks offer keyless entry, remote access, and integration with smart home systems. Here is what to consider.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Smart lock installation in Austin, TX'}, body:`
 <p>When choosing a smart lock, consider ANSI/BHMA grade (Grade 1 highest), compatibility with your smart home ecosystem, security features, and ease of use.</p>
 <h2>Popular options</h2>
 <ul>
@@ -565,9 +565,9 @@ const posts = [
 <li><strong>Kwikset SmartCode 916</strong> - touchscreen, Z-Wave</li>
 <li><strong>Yale Assure</strong> - touchscreen keypad, smart home compatible</li>
 </ul>
-<p>We install and program smart locks across Austin. <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>We install and program smart locks across Austin. <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'which-locks-are-hard-to-open', title:'Which Locks Are Hard to Open? | LoneStar Locksmith Austin', desc:'High-security, electronic, smart, bank vault, and automotive locks that are hardest to open - explained by LoneStar Locksmith Austin.', h1:'Which Locks Are Hard to Open?', lead:'Certain locks pose significant challenges even for experienced locksmiths. Here are the types that are hardest to open.', photo:{src:'images/commercial-lock-cylinder.webp',w:584,h:394,alt:'High-security lock in Austin, TX'}, body:`
+  {slug:'which-locks-are-hard-to-open', title:'Which Locks Are Hard to Open? | Austin Locksmith Pros', desc:'High-security, electronic, smart, bank vault, and automotive locks that are hardest to open - explained by Austin Locksmith Pros.', h1:'Which Locks Are Hard to Open?', lead:'Certain locks pose significant challenges even for experienced locksmiths. Here are the types that are hardest to open.', photo:{src:'images/commercial-lock-cylinder.webp',w:584,h:394,alt:'High-security lock in Austin, TX'}, body:`
 <ul>
 <li><strong>High-security locks</strong> - precision keyways, drill-resistant components, complex pin configurations</li>
 <li><strong>Electronic and smart locks</strong> - proprietary software, encryption, biometric scanners</li>
@@ -575,9 +575,9 @@ const posts = [
 <li><strong>Automobile locks</strong> - transponder keys, sidebar pins, electronic ignition</li>
 <li><strong>Specialty and custom locks</strong> - unusual mechanisms, limited documentation</li>
 </ul>
-<p>Need high-security lock service? <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need high-security lock service? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
-  {slug:'does-landlord-pay-for-locksmith', title:'Does Your Landlord Have to Pay for a Locksmith? | LoneStar Austin', desc:'Who pays for locksmith services in a rental - landlord vs tenant responsibilities, lockouts, and lock changes in Austin, TX.', h1:'Does Your Landlord Have to Pay for a Locksmith?', lead:'When facing a lockout, tenants often wonder who bears the responsibility. Here is how landlord-tenant responsibilities typically work.', photo:{src:'images/house-lockout.webp',w:768,h:480,alt:'House lockout in Austin, TX'}, body:`
+  {slug:'does-landlord-pay-for-locksmith', title:'Does Your Landlord Pay for a Locksmith? | Austin Locksmith Pros', desc:'Who pays for locksmith services in a rental - landlord vs tenant responsibilities, lockouts, and lock changes in Austin, TX.', h1:'Does Your Landlord Have to Pay for a Locksmith?', lead:'When facing a lockout, tenants often wonder who bears the responsibility. Here is how landlord-tenant responsibilities typically work.', photo:{src:'images/house-lockout.webp',w:768,h:480,alt:'House lockout in Austin, TX'}, body:`
 <p>Landlords are generally responsible for maintaining functional locks and covering repairs due to normal wear and tear. Tenants may be liable for costs from lost keys or negligent damage.</p>
 <h2>Landlord obligations</h2>
 <p>Provide a safe, secure living environment, including functional locks on doors and windows.</p>
@@ -585,7 +585,7 @@ const posts = [
 <p>Lost keys, damage from negligence, or unauthorized lock changes may be the tenant's cost.</p>
 <h2>Communication</h2>
 <p>Prompt communication between landlord and tenant resolves lock issues fastest. When in doubt, consult your lease and local laws.</p>
-<p>Need a locksmith in Austin? <a href="../index.html#contact">Contact LoneStar</a> or call (512)&nbsp;555&#8209;0192.</p>
+<p>Need a locksmith in Austin? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (512)&nbsp;555&#8209;0192.</p>
 `},
 ];
 for (const post of posts){
@@ -595,7 +595,7 @@ for (const post of posts){
     description: post.desc,
     h1: post.h1,
     lead: post.lead,
-    eyebrow: 'LoneStar Locksmith Blog',
+    eyebrow: 'Austin Locksmith Pros Blog',
     photo: post.photo,
     body: post.body,
   });
@@ -604,8 +604,8 @@ for (const post of posts){
 // Service areas page
 pages.push({
   path: '/service-areas.html',
-  title: 'Service Areas | LoneStar Locksmith Austin & Central Texas',
-  description: 'LoneStar Locksmith Solutions serves Austin and 22 surrounding Central Texas cities. 24/7 mobile locksmith. Call (512) 555-0192.',
+  title: 'Service Areas | Austin Locksmith Pros & Central Texas',
+  description: 'Austin Locksmith Pros serves Austin and 22 surrounding Central Texas cities. 24/7 mobile locksmith. Call (512) 555-0192.',
   h1: 'Service Areas',
   lead: 'We provide 24/7 mobile locksmith service across Austin and 22 surrounding Central Texas cities. A real locksmith, dispatched from within the region.',
   eyebrow: 'Where We Serve',

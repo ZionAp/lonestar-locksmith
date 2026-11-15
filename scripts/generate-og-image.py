@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the LoneStar Locksmith Solutions OpenGraph image (1200x630 PNG).
+"""Generate the Austin Locksmith Pros OpenGraph image (1200x630 PNG).
 
 Pure-Python generator (no third-party deps) so the repo has a branded
 social-share image without reusing any photography from the gate project.
@@ -157,7 +157,7 @@ def build():
                 alpha = 0.28 * (1 - d / max_d) ** 2
                 buf[y * W + x] = blend(buf[y * W + x], STEEL_BLUE, alpha)
 
-    # LoneStar star with warm halo (outline first, then the gold fill on top)
+    # Austin Locksmith Pros star with warm halo (outline first, then the gold fill on top)
     draw_star(buf, cx, cy, 120, blend(BG_BOTTOM, ORANGE, 0.18))
     draw_star(buf, cx, cy, 104, blend(BG_BOTTOM, ORANGE, 0.36))
     draw_star(buf, cx, cy, 100, ORANGE)
@@ -165,17 +165,17 @@ def build():
 
     text_x = 290
 
-    draw_text(buf, 'LONESTAR', text_x, 108, 9, WHITE)
-    draw_text(buf, 'LOCKSMITH SOLUTIONS', text_x, 196, 6, WHITE)
+    draw_text(buf, 'AUSTIN', text_x, 108, 9, WHITE)
+    draw_text(buf, 'LOCKSMITH PROS', text_x, 196, 6, WHITE)
 
     # Burnt-orange rule under the wordmark
-    draw_hbar(buf, text_x, text_x + text_width('LOCKSMITH SOLUTIONS', 6), 252, 4, ORANGE)
+    draw_hbar(buf, text_x, text_x + text_width('LOCKSMITH PROS', 6), 252, 4, ORANGE)
 
     draw_text(buf, '24/7 EMERGENCY LOCKSMITH SERVICE', text_x, 292, 4, SILVER)
     draw_text(buf, 'WE COME TO YOU - 10-45 MIN RESPONSE', text_x, 330, 3, DIM)
 
     draw_text(buf, '(512) 555-0192', text_x, 396, 6, GOLD)
-    draw_text(buf, 'INFO@LONESTARLOCKSMITHSOLUTIONS.COM', text_x, 470, 2, DIM)
+    draw_text(buf, 'INFO@AUSTINLOCKSMITHPROS.COM', text_x, 470, 2, DIM)
 
     draw_text(buf, 'AUSTIN - ROUND ROCK - CEDAR PARK - GEORGETOWN - 22 AREAS', text_x, 560, 2, blend(DIM, BG_BOTTOM, 0.25))
 

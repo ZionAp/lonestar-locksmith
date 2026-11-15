@@ -1,4 +1,4 @@
-// LoneStar Locksmith Solutions - JavaScript Functionality
+// Austin Locksmith Pros - JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('.header');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (result === 'sent') {
             setFormStatus('Thank you! Your quote request has been sent. We will contact you within 24 hours.', 'success');
         } else if (result === 'error') {
-            setFormStatus('We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.', 'error');
+            setFormStatus('We could not send your request. Please call (512) 555-0192 or email info@austinlocksmithpros.com.', 'error');
         }
 
         if (window.history && typeof window.history.replaceState === 'function') {
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (!response.ok || !payload.ok) {
-                    throw new Error(payload.message || 'We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.');
+                    throw new Error(payload.message || 'We could not send your request. Please call (512) 555-0192 or email info@austinlocksmithpros.com.');
                 }
 
                 succeeded = true;
@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 800);
             } catch (error) {
                 const message = error && error.name === 'AbortError'
-                    ? 'The request timed out. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.'
-                    : 'We could not send your request. Please call (512) 555-0192 or email info@lonestarlocksmithsolutions.com.';
+                    ? 'The request timed out. Please call (512) 555-0192 or email info@austinlocksmithpros.com.'
+                    : 'We could not send your request. Please call (512) 555-0192 or email info@austinlocksmithpros.com.';
                 setFormStatus(message, 'error');
             } finally {
                 window.clearTimeout(timeoutId);

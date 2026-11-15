@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const areasDir = path.join(root, 'areas');
-const siteUrl = 'https://www.lonestarlocksmithsolutions.com';
+const siteUrl = 'https://www.austinlocksmithpros.com';
 const lastmod = '2026-11-10';
 
 const areas = [
@@ -375,7 +375,7 @@ const icon = (name, className = 'icon') =>
 
 const phoneHtml = '(512)&nbsp;555&#8209;0192';
 const phoneHref = 'tel:+15125550192';
-const email = 'info@lonestarlocksmithsolutions.com';
+const email = 'info@austinlocksmithpros.com';
 
 const indexHtml = await fs.readFile(path.join(root, 'index.html'), 'utf8');
 const spriteMatch = indexHtml.match(/<svg class="icon-sprite"[\s\S]*?<\/svg>/);
@@ -413,7 +413,7 @@ function header() {
         <nav class="nav" aria-label="Main navigation">
             <div class="container">
                 <div class="nav-content">
-                <a class="nav-logo" href="../index.html" aria-label="LoneStar Locksmith Solutions home">
+                <a class="nav-logo" href="../index.html" aria-label="Austin Locksmith Pros home">
                     <span class="logo-mark" aria-hidden="true">
                         <svg viewBox="0 0 48 48" role="presentation" focusable="false">
                             <defs>
@@ -428,8 +428,8 @@ function header() {
                         </svg>
                     </span>
                     <span class="logo-text">
-                        <span class="logo-name">Lone<span class="accent">Star</span></span>
-                        <span class="logo-tagline">Locksmith Solutions</span>
+                        <span class="logo-name">Austin <span class="accent">Locksmith Pros</span></span>
+                        <span class="logo-tagline">24/7 Emergency Service</span>
                     </span>
                 </a>
                     <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
@@ -481,15 +481,15 @@ function footer() {
                             </svg>
                         </span>
                         <span class="logo-text">
-                            <span class="logo-name">Lone<span class="accent">Star</span></span>
-                            <span class="logo-tagline">Locksmith Solutions</span>
+                            <span class="logo-name">Austin <span class="accent">Locksmith Pros</span></span>
+                            <span class="logo-tagline">24/7 Emergency Service</span>
                         </span>
                     </div>
                     <p>Austin locksmith company - 24/7 emergency lockouts, rekeying, key duplication, smart locks &amp; security. Quality craftsmanship, reliable service.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/lonestarlocksmithsolutions" target="_blank" rel="noopener noreferrer" aria-label="LoneStar Locksmith Solutions on Facebook">${icon('facebook')}</a>
-                        <a href="https://www.instagram.com/lonestarlocksmithsolutions" target="_blank" rel="noopener noreferrer" aria-label="LoneStar Locksmith Solutions on Instagram">${icon('instagram')}</a>
-                        <a href="https://www.google.com/maps/place/LoneStar+Locksmith+Solutions" target="_blank" rel="noopener noreferrer" aria-label="LoneStar Locksmith Solutions on Google">${icon('google')}</a>
+                        <a href="https://www.facebook.com/austinlocksmithpros" target="_blank" rel="noopener noreferrer" aria-label="Austin Locksmith Pros on Facebook">${icon('facebook')}</a>
+                        <a href="https://www.instagram.com/austinlocksmithpros" target="_blank" rel="noopener noreferrer" aria-label="Austin Locksmith Pros on Instagram">${icon('instagram')}</a>
+                        <a href="https://www.google.com/maps/place/Austin+Locksmith+Pros" target="_blank" rel="noopener noreferrer" aria-label="Austin Locksmith Pros on Google">${icon('google')}</a>
                     </div>
                 </div>
 
@@ -526,7 +526,7 @@ function footer() {
             <div class="footer-bottom">
                 <p class="footer-texas">${icon('star')} Proudly Serving Texas ${icon('star')}</p>
                 <p class="footer-bless">${icon('flag-usa')} God Bless America &middot; God Bless Texas ${icon('star')}</p>
-                <p>&copy; <span id="year">2026</span> LoneStar Locksmith Solutions. All rights reserved. | Licensed &amp; Insured</p>
+                <p>&copy; <span id="year">2026</span> Austin Locksmith Pros. All rights reserved. | Licensed &amp; Insured</p>
             </div>
         </div>
     </footer>
@@ -557,12 +557,12 @@ function documentHead({ title, description, canonical, jsonLd }) {
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#101820">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="LoneStar Locksmith Solutions">
+    <meta property="og:site_name" content="Austin Locksmith Pros">
     <meta property="og:title" content="${escapeHtml(title)}">
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${canonical}">
     <meta property="og:image" content="${siteUrl}/images/og-image.png">
-    <meta property="og:image:alt" content="LoneStar Locksmith Solutions professional locksmith services in Austin, Texas">
+    <meta property="og:image:alt" content="Austin Locksmith Pros professional locksmith services in Austin, Texas">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(title)}">
@@ -668,7 +668,7 @@ function serviceSchema(area, canonical) {
     ],
     provider: {
       '@type': 'LocalBusiness',
-      name: 'LoneStar Locksmith Solutions',
+      name: 'Austin Locksmith Pros',
       url: siteUrl,
       telephone: '+15125550192',
       email,
@@ -736,7 +736,7 @@ function faqSchema(area) {
 
 function renderCity(area) {
   const canonical = `${siteUrl}/areas/${area.slug}.html`;
-  const title = `Locksmith in ${area.city}, TX | LoneStar`;
+  const title = `Locksmith in ${area.city}, TX | Austin Locksmith Pros`;
   const description = `24/7 emergency locksmith in ${area.city}, TX - lockouts, rekeying, car keys, smart locks, commercial security. 10-45 min response. Call (512) 555-0192.`;
 
   const article = `<article class="prose">
@@ -765,7 +765,7 @@ function renderCity(area) {
                     <h2>What to expect on a ${area.city} service call</h2>
                     <p>We start by verifying you own or are authorized to enter the property - ID and proof of residence for lockouts, always. Then we diagnose the lock or key issue, quote the price before any work begins, and finish most jobs in a single visit because our vans carry the common cylinders, hardware, and key blanks. Before we leave, every lock is tested, every door is checked for alignment, and you get straight answers about anything that should be scheduled for later rather than done today.</p>
 
-                    <h2>Why ${area.city} residents call LoneStar</h2>
+                    <h2>Why ${area.city} residents call Austin Locksmith Pros</h2>
                     <p>We are licensed, bonded, and insured, and our work includes a 1-year labor warranty plus the manufacturer warranty on hardware we supply. We answer our own phone, quote before we work, and send a locksmith who knows ${area.city} - not a call center reading a script. That is why most of our work comes from repeat customers and referrals.</p>
 
                     <h2>Locksmith service near ${area.city}</h2>
@@ -826,7 +826,7 @@ function renderCity(area) {
 
 function renderHub() {
   const canonical = `${siteUrl}/areas/`;
-  const title = 'Locksmith Service Areas | LoneStar Locksmith Solutions';
+  const title = 'Locksmith Service Areas | Austin Locksmith Pros';
   const description = '24/7 locksmith service across Austin and Central Texas - lockouts, rekeying, car keys, smart locks & commercial security. Find your city and call (512) 555-0192.';
   const cards = areas.map(area => {
     const excerpt = area.intro.split(/\s+/).slice(0, 22).join(' ');
@@ -846,12 +846,12 @@ function renderHub() {
     description,
     isPartOf: {
       '@type': 'WebSite',
-      name: 'LoneStar Locksmith Solutions',
+      name: 'Austin Locksmith Pros',
       url: siteUrl
     },
     about: {
       '@type': 'LocalBusiness',
-      name: 'LoneStar Locksmith Solutions',
+      name: 'Austin Locksmith Pros',
       telephone: '+15125550192',
       url: siteUrl
     },
@@ -896,7 +896,7 @@ function renderHub() {
   ])}
                 <p class="page-kicker">${icon('map-marker-alt')} Austin and Central Texas</p>
                 <h1 class="hero-title">Locksmith Services Across Central Texas</h1>
-                <p class="hero-subtitle">LoneStar Locksmith Solutions serves Austin and 21 surrounding communities with 24/7 emergency lockouts, rekeying, car keys, smart locks, and commercial access control. Choose your city for local lock, housing, and security guidance.</p>
+                <p class="hero-subtitle">Austin Locksmith Pros serves Austin and 21 surrounding communities with 24/7 emergency lockouts, rekeying, car keys, smart locks, and commercial access control. Choose your city for local lock, housing, and security guidance.</p>
                 ${quoteButtons()}
                 ${trustRow()}
             </div>

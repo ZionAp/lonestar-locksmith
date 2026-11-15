@@ -4,10 +4,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
-const siteUrl = 'https://www.lonestarlocksmithsolutions.com';
+const siteUrl = 'https://www.austinlocksmithpros.com';
 const phone = '(512) 555-0192';
 const phoneHref = 'tel:+15125550192';
-const email = 'info@lonestarlocksmithsolutions.com';
+const email = 'info@austinlocksmithpros.com';
 
 const pages = [
   {
@@ -63,7 +63,7 @@ const pages = [
     title: 'Automotive Locksmith Austin TX | Car Key Replacement & Programming',
     description: 'Automotive locksmith in Austin, TX - car key replacement, duplication, transponder programming, ignition repair, car lockouts, trunk unlocking. Mobile service, most jobs one visit. Call (512) 555-0192.',
     h1: 'Automotive Locksmith in Austin, TX',
-    lead: 'Getting locked out of your car or losing your keys can happen at the worst times - that\'s when LoneStar is ready to help. Our automotive locksmith services in Austin cover everything from car key programming to ignition repair, available 24 hours a day across the city and surrounding areas.',
+    lead: 'Getting locked out of your car or losing your keys can happen at the worst times - that\'s when Austin Locksmith Pros is ready to help. Our automotive locksmith services in Austin cover everything from car key programming to ignition repair, available 24 hours a day across the city and surrounding areas.',
     photo: { src: '../images/automotive-locksmith-.webp', w: 1280, h: 720, alt: 'Automotive locksmith service in Austin, TX' },
     services: [
       ['Car Key Replacement', 'Losing your car key doesn\'t always mean a trip to the dealership. We cut and program new car keys on the spot for most vehicle brands, saving you time and towing costs. Regular, fob, transponder, and push-to-start systems.'],
@@ -88,7 +88,7 @@ const pages = [
     title: 'Commercial Locksmith Austin TX | Business Security & Master Keys',
     description: 'Commercial locksmith in Austin, TX - business lockouts, master key systems, high-security locks, panic bars, rekeying, door hardware. 24/7 mobile service. Call (512) 555-0192.',
     h1: 'Commercial Locksmith in Austin, TX',
-    lead: 'LoneStar provides full-service commercial locksmith solutions for offices, retail stores, industrial facilities, and property managers across Austin and Central Texas. Our technicians handle everything from business lockouts to master key systems and high-security upgrades, available 24 hours a day.',
+    lead: 'Austin Locksmith Pros provides full-service commercial locksmith solutions for offices, retail stores, industrial facilities, and property managers across Austin and Central Texas. Our technicians handle everything from business lockouts to master key systems and high-security upgrades, available 24 hours a day.',
     photo: { src: '../images/commerciallocksmith-1024x576.webp', w: 1024, h: 576, alt: 'Commercial locksmith installing a lock in Austin, TX' },
     services: [
       ['Business Lockout Service', 'Fast entry for offices, retail stores, and industrial properties. Whether you lost your keys, the lock jammed, or an electronic system stopped working, we open the door and restore access quickly. We service all commercial-grade locks, keypads, and access control systems.'],
@@ -175,7 +175,7 @@ for (const p of pages){
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-eyebrow">LoneStar Locksmith Solutions</p>
+                    <p class="hero-eyebrow">Austin Locksmith Pros</p>
                     <h1 class="hero-title">${esc(p.h1)}</h1>
                     <p class="hero-subtitle">${esc(p.lead)}</p>
                     <div class="hero-cta">
@@ -201,7 +201,7 @@ for (const p of pages){
                     <img src="${p.photo.src}" width="${p.photo.w}" height="${p.photo.h}" loading="lazy" decoding="async" alt="${p.photo.alt}">
                 </figure>
                 <div class="about-text">
-                    <h2 class="section-title">Why Choose LoneStar</h2>
+                    <h2 class="section-title">Why Choose Austin Locksmith Pros</h2>
                     <p>${p.lead}</p>
                     <p>Our mobile locksmiths arrive fully equipped, so most jobs are completed in a single visit - no towing, no trip to a shop. Clear, upfront pricing before any work begins.</p>
                 </div>
@@ -237,7 +237,7 @@ ${faqItems(p.faqs)}
         <div class="container">
             <div class="cta-content">
                 <h2>Need a locksmith right now?</h2>
-                <p>Call LoneStar Locksmith Solutions - we come to you, 24/7, across Austin and Central Texas.</p>
+                <p>Call Austin Locksmith Pros - we come to you, 24/7, across Austin and Central Texas.</p>
                 <div class="cta-buttons">
                     <a href="${phoneHref}" class="btn btn-primary btn-large">
                         <svg class="icon" aria-hidden="true"><use href="#icon-phone"></use></svg> Call&nbsp;(512)&nbsp;555&#8209;0192
