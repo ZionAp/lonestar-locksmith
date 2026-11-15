@@ -1,6 +1,9 @@
 DirectoryIndex index.html
 Options -Indexes
 
+# Branded 404 page (served with a real 404 status)
+ErrorDocument 404 /404.html
+
 # --- Canonical host: force https + www (skip ACME/SSL validation) ----------
 # The site is canonical at https://www.austinlocksmithpros.com, so send every
 # other host/protocol there with a single 301 to avoid duplicate content.
