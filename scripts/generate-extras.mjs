@@ -695,6 +695,39 @@ const posts = [
 </ul>
 <p>Need help securing your home before your trip? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free security assessment.</p>
 `},
+  {slug:'winter-home-security-tips-austin', title:'Winter Home Security Tips for Austin | Austin Locksmith Pros', desc:'Winter home security tips for Austin homeowners - prevent break-ins during the holidays and cold months. From Austin Locksmith Pros.', h1:'Winter Home Security Tips for Austin Homeowners', lead:'Winter brings shorter days, holiday travel, and more time away from home. Here is how to keep your Austin home secure through the cold months.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Winter home security in Austin, TX'}, body:`
+<h2>Holiday travel security</h2>
+<ul>
+<li><strong>Don't announce your travel on social media</strong> until you're back. Share photos after, not during.</li>
+<li><strong>Have a neighbor collect mail and packages.</strong> Piled-up mail signals an empty home.</li>
+<li><strong>Use smart lighting on a schedule.</strong> Random on/off patterns beat a single lamp left on.</li>
+<li><strong>Don't hide a spare key outside.</strong> Use a real lockbox or leave a key with a trusted neighbor.</li>
+<li><strong>Arm your alarm system</strong> and notify your monitoring company of travel dates.</li>
+</ul>
+<h2>Lock and door checks before winter</h2>
+<ul>
+<li><strong>Rekey if you recently moved in or lost a key.</strong> You don't know who has old keys.</li>
+<li><strong>Check all locks.</strong> Make sure every exterior door locks smoothly and the strike plates are secure with 3-inch screws.</li>
+<li><strong>Lubricate locks</strong> with graphite or dry PTFE - cold weather can make mechanisms stiff.</li>
+<li><strong>Inspect weather stripping.</strong> Gaps around doors let in cold air and make locks harder to operate.</li>
+<li><strong>Consider a smart lock</strong> for keyless entry and guest codes while you're away.</li>
+</ul>
+<h2>Garage and exterior</h2>
+<ul>
+<li><strong>Never leave the garage door opener in a car parked outside.</strong></li>
+<li><strong>Lock the door between the garage and the house.</strong></li>
+<li><strong>Secure sheds and detached garages.</strong> They often hold tools that can be used to break in.</li>
+<li><strong>Trim bushes and trees</strong> that block sightlines to windows and doors.</li>
+<li><strong>Install motion-sensor lights</strong> at all entry points.</li>
+</ul>
+<h2>After a storm or freeze</h2>
+<ul>
+<li><strong>Check locks and doors</strong> for damage or misalignment after severe weather.</li>
+<li><strong>If a lock is frozen,</strong> use a lock de-icer or warm key - never force it.</li>
+<li><strong>If you suspect tampering,</strong> call us before entering.</li>
+</ul>
+<p>Need help securing your home before winter? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free assessment.</p>
+`},
 ];
 for (const post of posts){
   pages.push({
