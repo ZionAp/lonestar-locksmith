@@ -235,6 +235,21 @@ ${faqItems(p.faqs)}
         </div>
     </section>
 
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Related Services</h2>
+                    <ul style="margin:1rem 0 1.5rem 1.25rem;line-height:1.8;">
+                        ${pages.filter(x => x.slug !== p.slug).slice(0,5).map(x => `<li><a href="${x.slug}.html">${esc(x.h1)}</a></li>`).join('\\n                        ')}
+                    </ul>
+                    <h2 class="section-title">Service Areas We Cover</h2>
+                    <p>We serve Austin and Central Texas. See our <a href="../service-areas.html">full service area list</a>, including <a href="../areas/austin.html">Austin</a>, <a href="../areas/cedar-park.html">Cedar Park</a>, <a href="../areas/round-rock.html">Round Rock</a>, <a href="../areas/pflugerville.html">Pflugerville</a>, and <a href="../areas/georgetown.html">Georgetown</a>. You may also find our <a href="../cost/locksmith-cost-austin.html">locksmith cost guide</a> and <a href="../problems/locked-out-of-house.html">lockout help</a> useful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
