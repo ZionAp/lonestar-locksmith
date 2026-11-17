@@ -728,6 +728,40 @@ const posts = [
 </ul>
 <p>Need help securing your home before winter? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free assessment.</p>
 `},
+  {slug:'new-home-security-checklist', title:'New Home Security Checklist | Austin Locksmith Pros', desc:'Just moved into a new home in Austin? Secure it with this checklist - rekey, smart locks, lighting, and habits. From Austin Locksmith Pros.', h1:'New Home Security Checklist for Austin Homeowners', lead:'Just moved in? A few simple steps in the first week can dramatically improve your home security.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'New home security in Austin, TX'}, body:`
+<h2>Week 1: Locks and keys</h2>
+<ul>
+<li><strong>Rekey or replace all exterior locks.</strong> You don't know who has old keys - previous owners, contractors, realtors, or neighbors.</li>
+<li><strong>Change the garage code</strong> and any keypad codes.</li>
+<li><strong>Test every lock</strong> - make sure they latch and deadbolt smoothly.</li>
+<li><strong>Make spare keys</strong> for trusted family members and store them safely.</li>
+<li><strong>Consider a smart lock</strong> for keyless entry and guest codes.</li>
+</ul>
+<h2>Week 1: Doors and windows</h2>
+<ul>
+<li><strong>Check all doors close and latch properly.</strong> A misaligned door is an easy target.</li>
+<li><strong>Ensure strike plates are secured with 3-inch screws</strong> into the stud.</li>
+<li><strong>Lock all windows</strong>, including second-floor and basement.</li>
+<li><strong>Add window locks or pins</strong> to sliding windows.</li>
+<li><strong>Check the door between the garage and the house</strong> - it should have a solid-core door with a deadbolt.</li>
+</ul>
+<h2>Week 1: Lighting and visibility</h2>
+<ul>
+<li><strong>Install motion-sensor lights</strong> at all entry points.</li>
+<li><strong>Ensure house numbers are visible</strong> from the street for emergency responders.</li>
+<li><strong>Trim bushes and trees</strong> that block sightlines to windows and doors.</li>
+</ul>
+<h2>Week 1: Habits</h2>
+<ul>
+<li><strong>Don't hide spare keys outside.</strong> Use a real lockbox or leave a key with a trusted neighbor.</li>
+<li><strong>Don't post your new address on social media</strong> until you're settled.</li>
+<li><strong>Meet your neighbors.</strong> A connected neighborhood is a safer neighborhood.</li>
+<li><strong>Test your locks twice a year</strong> and lubricate with graphite or dry PTFE.</li>
+</ul>
+<h2>When to call a locksmith</h2>
+<p>If any lock is worn, sticky, or damaged, or if you want to upgrade to high-security or smart locks, call Austin Locksmith Pros. We provide free assessments and upfront pricing. Most jobs are completed in one visit.</p>
+<p>Need help securing your new home? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
+`},
 ];
 for (const post of posts){
   pages.push({
