@@ -53,6 +53,8 @@ function renderPage(p, depth){
     h = h.replace(/href="areas\//g, `href="${cssPrefix}areas/`);
     h = h.replace(/href="services\//g, `href="${cssPrefix}services/`);
     h = h.replace(/href="blog\//g, `href="${cssPrefix}blog/`);
+    h = h.replace(/href="contact\.html/g, `href="${cssPrefix}contact.html`);
+    h = h.replace(/href="service-areas\.html/g, `href="${cssPrefix}service-areas.html`);
   }
   // canonical + og
   h = h.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${url}"`);
@@ -284,6 +286,10 @@ ${renderFaqs(p.faqs)}
   const tailFixed = depth > 0
     ? t.replace(/src="js\//g, `src="${cssPrefix}js/`)
        .replace(/href="areas\//g, `href="${cssPrefix}areas/`)
+       .replace(/href="services\//g, `href="${cssPrefix}services/`)
+       .replace(/href="blog\//g, `href="${cssPrefix}blog/`)
+       .replace(/href="contact\.html/g, `href="${cssPrefix}contact.html`)
+       .replace(/href="service-areas\.html/g, `href="${cssPrefix}service-areas.html`)
        .replace(/href="#/g, `href="${cssPrefix}index.html#`)
     : t;
   // footer service links -> services pages

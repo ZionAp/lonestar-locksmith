@@ -147,6 +147,7 @@ for (const p of pages){
   h = h.replace(/href="css\//g, 'href="../css/');
   h = h.replace(/src="js\//g, 'src="../js/');
   h = h.replace(/href="areas\//g, 'href="../areas/');
+  h = h.replace(/href="services\//g, 'href="../services/');
   // canonical + og url
   h = h.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${url}"`);
   h = h.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${url}"`);
@@ -271,7 +272,7 @@ ${faqItems(p.faqs)}
 
   const t = tail.replace(/src="js\//g, 'src="../js/');
   // tail footer links: make areas links relative to services/ (already ../areas? footer uses areas/...); fix
-  const tailFixed = t.replace(/href="areas\//g, 'href="../areas/').replace(/href="#/g, 'href="../index.html#');
+  const tailFixed = t.replace(/href="areas\//g, 'href="../areas/').replace(/href="blog\//g, 'href="../blog/').replace(/href="contact\.html/g, 'href="../contact.html').replace(/href="service-areas\.html/g, 'href="../service-areas.html').replace(/href="#/g, 'href="../index.html#');
   const out = h + main + tailFixed;
   const outPath = path.join(root, 'services', p.slug + '.html');
   fs.writeFileSync(outPath, out);
