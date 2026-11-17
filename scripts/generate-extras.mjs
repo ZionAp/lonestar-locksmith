@@ -599,6 +599,70 @@ const posts = [
 <p>Prompt communication between landlord and tenant resolves lock issues fastest. When in doubt, consult your lease and local laws.</p>
 <p>Need a locksmith in Austin? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
 `},
+  {slug:'home-security-checklist-austin', title:'Home Security Checklist for Austin Homeowners | Austin Locksmith Pros', desc:'A practical home security checklist for Austin homeowners - locks, lighting, alarms, and habits that prevent break-ins. From Austin Locksmith Pros.', h1:'Home Security Checklist for Austin Homeowners', lead:'A few simple steps can dramatically reduce your risk of a break-in. Use this checklist to audit your home security.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Home security in Austin, TX'}, body:`
+<h2>Doors and locks</h2>
+<ul>
+<li>Rekey or replace locks when you move in - you don't know who has old keys.</li>
+<li>Use Grade 1 or Grade 2 deadbolts on all exterior doors.</li>
+<li>Ensure strike plates are secured with 3-inch screws into the stud.</li>
+<li>Check that all doors close and latch properly - a misaligned door is an easy target.</li>
+<li>Consider a smart lock for keyless entry and guest codes.</li>
+</ul>
+<h2>Windows</h2>
+<ul>
+<li>Lock all windows, including second-floor and basement.</li>
+<li>Add window locks or pins to sliding windows.</li>
+<li>Use window film or security glass for ground-floor windows.</li>
+<li>Trim bushes and trees that block sightlines to windows.</li>
+</ul>
+<h2>Lighting and visibility</h2>
+<ul>
+<li>Install motion-sensor lights at all entry points.</li>
+<li>Keep porch lights on at night or use smart lighting on a schedule.</li>
+<li>Ensure house numbers are visible from the street for emergency responders.</li>
+</ul>
+<h2>Garage and exterior</h2>
+<ul>
+<li>Never leave the garage door opener in a car parked outside.</li>
+<li>Lock the door between the garage and the house.</li>
+<li>Secure sheds and detached garages - they often hold tools that can be used to break in.</li>
+</ul>
+<h2>Habits</h2>
+<ul>
+<li>Don't hide spare keys under mats or in fake rocks - use a real lockbox.</li>
+<li>Don't post vacation plans on social media in real time.</li>
+<li>Have a neighbor collect mail and packages when you're away.</li>
+<li>Test your locks twice a year and lubricate with graphite or dry PTFE.</li>
+</ul>
+<p>Need help upgrading your home security? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free assessment.</p>
+`},
+  {slug:'what-to-do-locked-out-of-car', title:'Locked Out of Your Car in Austin? Step-by-Step Guide | Austin Locksmith Pros', desc:'Locked out of your car in Austin, TX? Step-by-step what to do, what to avoid, and how a mobile auto locksmith gets you back in fast.', h1:'Locked Out of Your Car in Austin: Step-by-Step Guide', lead:'A car lockout is stressful but manageable. Follow these steps to get back in safely and quickly.', photo:{src:'images/automotive-locksmith-.webp',w:1280,h:720,alt:'Car lockout service in Austin, TX'}, body:`
+<h2>Step 1: Check every door and the trunk</h2>
+<p>Sometimes one door is unlocked, or the trunk release works. Check all doors, including the rear and passenger side, before assuming you're fully locked out.</p>
+<h2>Step 2: Look for a spare key</h2>
+<p>Check your wallet, bag, at home, with a spouse or family member, or in a magnetic hide-a-key box. A spare key saves time and money.</p>
+<h2>Step 3: Check roadside assistance</h2>
+<p>If you have AAA, insurance roadside coverage, or a manufacturer program, call them. Response times vary (30-90 minutes) and there may be a fee.</p>
+<h2>Step 4: Call a mobile auto locksmith</h2>
+<p>A mobile auto locksmith is usually the fastest option - 15-30 minutes from call to open. We come to you and open the car without damage. Cost: $65-$125 daytime, $95-$175 after hours.</p>
+<h2>What NOT to do</h2>
+<ul>
+<li>Don't break a window - glass replacement costs far more than a service call.</li>
+<li>Don't use a coat hanger or slim jim on modern cars - you can damage weather stripping, airbags, or wiring.</li>
+<li>Don't call a tow truck unless needed - towing adds cost and a trip to a shop.</li>
+<li>If a child or pet is locked inside, call 911 first - time matters.</li>
+</ul>
+<h2>If you also lost your keys</h2>
+<p>We can cut and program a replacement key on the spot for most makes and models - often faster and cheaper than the dealership. See our <a href="../services/car-key-replacement.html">car key replacement</a> and <a href="../services/car-key-programming.html">key programming</a> services.</p>
+<h2>Prevent the next lockout</h2>
+<ul>
+<li>Keep a spare key in a magnetic box under the car (hidden well).</li>
+<li>Give a spare to a trusted family member.</li>
+<li>Consider a smart key or keyless entry fob.</li>
+<li>Save our number: (737)&nbsp;265&#8209;4627.</li>
+</ul>
+<p>Need help now? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
+`},
 ];
 for (const post of posts){
   pages.push({
