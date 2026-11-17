@@ -55,6 +55,10 @@ function renderPage(p, depth){
     h = h.replace(/href="blog\//g, `href="${cssPrefix}blog/`);
     h = h.replace(/href="contact\.html/g, `href="${cssPrefix}contact.html`);
     h = h.replace(/href="service-areas\.html/g, `href="${cssPrefix}service-areas.html`);
+    // critical CSS inlined in <head> references fonts via url(); adjust for subfolder
+    h = h.replace(/url\("fonts\//g, `url("${cssPrefix}fonts/`);
+    h = h.replace(/url\('fonts\//g, `url('${cssPrefix}fonts/`);
+    h = h.replace(/url\(fonts\//g, `url(${cssPrefix}fonts/`);
   }
   // canonical + og
   h = h.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${url}"`);
@@ -285,6 +289,9 @@ ${renderFaqs(p.faqs)}
   const t = tailBase;
   const tailFixed = depth > 0
     ? t.replace(/src="js\//g, `src="${cssPrefix}js/`)
+       .replace(/href="css\//g, `href="${cssPrefix}css/`)
+       .replace(/href="fonts\//g, `href="${cssPrefix}fonts/`)
+       .replace(/href="images\//g, `href="${cssPrefix}images/`)
        .replace(/href="areas\//g, `href="${cssPrefix}areas/`)
        .replace(/href="services\//g, `href="${cssPrefix}services/`)
        .replace(/href="blog\//g, `href="${cssPrefix}blog/`)
