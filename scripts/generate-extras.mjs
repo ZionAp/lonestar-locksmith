@@ -636,7 +636,7 @@ const posts = [
 </ul>
 <p>Need help upgrading your home security? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free assessment.</p>
 `},
-  {slug:'what-to-do-locked-out-of-car', title:'Locked Out of Your Car in Austin? Step-by-Step Guide | Austin Locksmith Pros', desc:'Locked out of your car in Austin, TX? Step-by-step what to do, what to avoid, and how a mobile auto locksmith gets you back in fast.', h1:'Locked Out of Your Car in Austin: Step-by-Step Guide', lead:'A car lockout is stressful but manageable. Follow these steps to get back in safely and quickly.', photo:{src:'images/automotive-locksmith-.webp',w:1280,h:720,alt:'Car lockout service in Austin, TX'}, body:`
+  {slug:'what-to-do-locked-out-of-car', title:'Locked Out of Your Car in Austin? Step-by-Step Guide', desc:'Locked out of your car in Austin, TX? Step-by-step what to do, what to avoid, and how a mobile auto locksmith gets you back in fast.', h1:'Locked Out of Your Car in Austin: Step-by-Step Guide', lead:'A car lockout is stressful but manageable. Follow these steps to get back in safely and quickly.', photo:{src:'images/automotive-locksmith-.webp',w:1280,h:720,alt:'Car lockout service in Austin, TX'}, body:`
 <h2>Step 1: Check every door and the trunk</h2>
 <p>Sometimes one door is unlocked, or the trunk release works. Check all doors, including the rear and passenger side, before assuming you're fully locked out.</p>
 <h2>Step 2: Look for a spare key</h2>
@@ -662,6 +662,38 @@ const posts = [
 <li>Save our number: (737)&nbsp;265&#8209;4627.</li>
 </ul>
 <p>Need help now? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627.</p>
+`},
+  {slug:'summer-vacation-home-security', title:'Summer Vacation Home Security Tips | Austin Locksmith Pros', desc:'Heading out for summer vacation? Secure your Austin home with these lock, lighting, and habit tips from Austin Locksmith Pros.', h1:'Summer Vacation Home Security Tips for Austin Homeowners', lead:'A few simple steps before you leave can dramatically reduce your risk of a break-in while you are away.', photo:{src:'images/residential-locksmith-.webp',w:1280,h:720,alt:'Home security for summer vacation in Austin, TX'}, body:`
+<h2>Before you leave</h2>
+<ul>
+<li><strong>Rekey if you recently moved in or lost a key.</strong> You don't know who has old keys.</li>
+<li><strong>Check all locks.</strong> Make sure every exterior door locks smoothly and the strike plates are secure.</li>
+<li><strong>Don't hide a spare key outside.</strong> Use a real lockbox or leave a key with a trusted neighbor.</li>
+<li><strong>Lock all windows</strong>, including second-floor and basement.</li>
+<li><strong>Close blinds and curtains</strong> so valuables aren't visible.</li>
+</ul>
+<h2>Make it look occupied</h2>
+<ul>
+<li><strong>Use smart lighting on a schedule.</strong> Random on/off patterns beat a single lamp left on.</li>
+<li><strong>Have a neighbor collect mail and packages.</strong> Piled-up mail signals an empty home.</li>
+<li><strong>Park a car in the driveway</strong> if possible.</li>
+<li><strong>Don't post vacation plans on social media in real time.</strong> Share photos after you return.</li>
+<li><strong>Stop newspaper and package deliveries.</strong></li>
+</ul>
+<h2>Technology that helps</h2>
+<ul>
+<li><strong>Smart locks</strong> let you check and lock doors remotely and give temporary codes to pet sitters or house cleaners.</li>
+<li><strong>Doorbell cameras</strong> let you see and speak to visitors from anywhere.</li>
+<li><strong>Alarm systems</strong> with monitoring provide the fastest response to a break-in.</li>
+<li><strong>Smart plugs</strong> can turn lamps and TVs on and off on a schedule.</li>
+</ul>
+<h2>When you return</h2>
+<ul>
+<li>Check locks and doors for signs of tampering.</li>
+<li>If anything looks off, call us before entering.</li>
+<li>Reset any temporary access codes you gave out.</li>
+</ul>
+<p>Need help securing your home before your trip? <a href="../index.html#contact">Contact Austin Locksmith Pros</a> or call (737)&nbsp;265&#8209;4627 for a free security assessment.</p>
 `},
 ];
 for (const post of posts){
