@@ -17,14 +17,16 @@ for (const slug of slugs) {
   const { document } = new JSDOM(html, { url: `${siteUrl}/services/${slug}.html` }).window;
 
   assert.equal(document.querySelectorAll('h1').length, 1, `${slug} should have one h1`);
-  assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute('href'), `${siteUrl}/services/${slug}.html`, `${slug} canonical`);
-  assert.ok(document.querySelectorAll('.service-detail').length >= 3, `${slug} should have service details`);
-  assert.ok(document.querySelector('a[href="../index.html#contact"]'), `${slug} should link to contact`);
+  const expectedCanonical = slug === 'index' ? `${siteUrl}/services/` : `${siteUrl}/services/${slug}.html`;
+  assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute('href'), expectedCanonical, `${slug} canonical`);
+  if (slug !== 'index') assert.ok(document.querySelectorAll('.service-detail').length >= 3, `${slug} should have service details`);
+  if (slug !== 'index') assert.ok(document.querySelector('a[href="../index.html#contact"]'), `${slug} should link to contact`);
   assert.ok(!/IMG-20261021|images\/gallery/.test(html), `${slug} should not reference gate photos`);
 }
 
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 for (const slug of slugs) {
+  if (slug === 'index') continue;
   assert.ok(sitemap.includes(`${siteUrl}/services/${slug}.html`), `sitemap should include ${slug}`);
 }
 

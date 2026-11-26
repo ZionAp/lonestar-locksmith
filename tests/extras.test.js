@@ -33,13 +33,14 @@ for (const f of posts) {
   const html = fs.readFileSync(path.join(blogDir, f), 'utf8');
   const { document } = new JSDOM(html, { url: `${siteUrl}/blog/${slug}.html` }).window;
   assert.equal(document.querySelectorAll('h1').length, 1, `${slug} should have one h1`);
-  assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute('href'), `${siteUrl}/blog/${slug}.html`, `${slug} canonical`);
+  const expectedCanonical = slug === 'index' ? `${siteUrl}/blog/` : `${siteUrl}/blog/${slug}.html`;
+  assert.equal(document.querySelector('link[rel="canonical"]')?.getAttribute('href'), expectedCanonical, `${slug} canonical`);
   assert.ok(!/IMG-20261021|images\/gallery/.test(html), `${slug} should not reference gate photos`);
 }
 
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 assert.ok(sitemap.includes(`${siteUrl}/contact.html`));
 assert.ok(sitemap.includes(`${siteUrl}/service-areas.html`));
-assert.ok(sitemap.includes(`${siteUrl}/blog/index.html`));
+assert.ok(sitemap.includes(`${siteUrl}/blog/`));
 
 console.log(`Extras: contact, service-areas, ${posts.length} blog pages passed`);
